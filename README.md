@@ -38,7 +38,7 @@ alt="GitHub issues">
 
 ## About
 
-This was intended as a small extension for [Spydish](https://github.com/builtbybel/spydish) to uninstall specific apps. Since I didn't want to bloat Spydish unnecessarily (those who know me know that I am a friend of small apps and lean code), I thought I'd contribute a little to this nice project from [ConditionalException](https://github.com/ConditionalException/Windows10Privacy)
+This was intended as a small extension for [Spydish](https://github.com/builtbybel/spydish) to uninstall specific apps. Since I didn't want to bloat Spydish unnecessarily (those who know me know that I am a friend of small apps and lean code), I thought I'd contribute to this nice project from [ConditionalException](https://github.com/ConditionalException/Windows10Privacy)
 
 ## Download
 
