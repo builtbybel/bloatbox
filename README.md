@@ -40,7 +40,7 @@ alt="GitHub issues">
 This was intended as a small extension for [Spydish](https://github.com/builtbybel/spydish) to uninstall specific apps. 
 Since I didn't want to bloat Spydish unnecessarily (those who know me know that I am a friend of small apps and lean code), I have now made this available as a standalone app. With the upcoming Spydish release it can be started from within Spydish. 
 
-This code is based on parts of this nice project from [ConditionalException](https://github.com/ConditionalException/Windows10Privacy)
+This code is based on parts of this nice project from [ConditionalException](https://github.com/ConditionalException/Windows10Privacy). Some inspiration has also flowed from this ugly guy :smirk: [AppManager by Microsoft](https://www.microsoft.com/p/app/9n8b6qf719pt)
 
 ## Download
 
