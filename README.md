@@ -29,7 +29,6 @@ alt="GitHub issues">
 
 <p align="center">
   <a href="#about">About</a> •
-  <a href="#features">Features</a> •
   <a href="#download">Download</a> •
   <a href="#credits">Credits</a> •
 </p>
