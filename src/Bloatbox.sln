@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloatbox", "Bloatbox\Bloatbox.csproj", "{B3926FA2-3770-44FC-A2CF-6368FEC40C9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3926FA2-3770-44FC-A2CF-6368FEC40C9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3926FA2-3770-44FC-A2CF-6368FEC40C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3926FA2-3770-44FC-A2CF-6368FEC40C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3926FA2-3770-44FC-A2CF-6368FEC40C9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73676B66-3C6A-4377-BE31-9707C7F9B99D}
+	EndGlobalSection
+EndGlobal
