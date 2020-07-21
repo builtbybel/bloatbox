@@ -43,15 +43,18 @@
             this.LstUWPRemove = new System.Windows.Forms.ListBox();
             this.LstUWP = new System.Windows.Forms.ListBox();
             this.PnlLeft = new System.Windows.Forms.Panel();
+            this.LblNameUWP = new System.Windows.Forms.Label();
             this.LblMainMenu = new System.Windows.Forms.Button();
             this.PnlRight = new System.Windows.Forms.Panel();
+            this.LblNameUWPRemove = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.LnkMSSettingsAppsandfeatures = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.MainMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.LinkGithub = new System.Windows.Forms.ToolStripMenuItem();
-            this.Info = new System.Windows.Forms.ToolStripMenuItem();
+            this.LinkGitHub = new System.Windows.Forms.ToolStripMenuItem();
+            this.CheckNewReleases = new System.Windows.Forms.ToolStripMenuItem();
+            this.AppInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.PnlLeft.SuspendLayout();
             this.PnlRight.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -61,13 +64,19 @@
             // ChkShowUWPSystem
             // 
             this.ChkShowUWPSystem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ChkShowUWPSystem.Appearance = System.Windows.Forms.Appearance.Button;
             this.ChkShowUWPSystem.AutoSize = true;
             this.ChkShowUWPSystem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ChkShowUWPSystem.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.ChkShowUWPSystem.FlatAppearance.BorderSize = 0;
+            this.ChkShowUWPSystem.FlatAppearance.CheckedBackColor = System.Drawing.Color.HotPink;
+            this.ChkShowUWPSystem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.ChkShowUWPSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChkShowUWPSystem.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkShowUWPSystem.Location = new System.Drawing.Point(16, 716);
+            this.ChkShowUWPSystem.Location = new System.Drawing.Point(15, 710);
             this.ChkShowUWPSystem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ChkShowUWPSystem.Name = "ChkShowUWPSystem";
-            this.ChkShowUWPSystem.Size = new System.Drawing.Size(155, 25);
+            this.ChkShowUWPSystem.Size = new System.Drawing.Size(146, 31);
             this.ChkShowUWPSystem.TabIndex = 25;
             this.ChkShowUWPSystem.Text = "Show System apps";
             this.ChkShowUWPSystem.UseVisualStyleBackColor = false;
@@ -105,12 +114,12 @@
             this.BtnRemoveAll.FlatAppearance.BorderSize = 0;
             this.BtnRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRemoveAll.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRemoveAll.Location = new System.Drawing.Point(17, 317);
+            this.BtnRemoveAll.Location = new System.Drawing.Point(19, 276);
             this.BtnRemoveAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnRemoveAll.Name = "BtnRemoveAll";
             this.BtnRemoveAll.Size = new System.Drawing.Size(389, 32);
             this.BtnRemoveAll.TabIndex = 22;
-            this.BtnRemoveAll.Text = "Remove all";
+            this.BtnRemoveAll.Text = "<< Remove all";
             this.BtnRemoveAll.UseVisualStyleBackColor = false;
             this.BtnRemoveAll.Click += new System.EventHandler(this.BtnRemoveAll_Click);
             // 
@@ -129,7 +138,7 @@
             this.BtnAddAll.Name = "BtnAddAll";
             this.BtnAddAll.Size = new System.Drawing.Size(389, 32);
             this.BtnAddAll.TabIndex = 21;
-            this.BtnAddAll.Text = "Add all";
+            this.BtnAddAll.Text = "Add all >>";
             this.BtnAddAll.UseVisualStyleBackColor = false;
             this.BtnAddAll.Click += new System.EventHandler(this.BtnAddAll_Click);
             // 
@@ -142,7 +151,7 @@
             this.BtnRemoveUWP.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.BtnRemoveUWP.FlatAppearance.BorderSize = 0;
             this.BtnRemoveUWP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRemoveUWP.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRemoveUWP.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRemoveUWP.Location = new System.Drawing.Point(17, 700);
             this.BtnRemoveUWP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnRemoveUWP.Name = "BtnRemoveUWP";
@@ -196,12 +205,12 @@
             this.BtnRemove.FlatAppearance.BorderSize = 0;
             this.BtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRemove.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRemove.Location = new System.Drawing.Point(17, 277);
+            this.BtnRemove.Location = new System.Drawing.Point(19, 316);
             this.BtnRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnRemove.Name = "BtnRemove";
             this.BtnRemove.Size = new System.Drawing.Size(389, 32);
             this.BtnRemove.TabIndex = 17;
-            this.BtnRemove.Text = "Remove selected";
+            this.BtnRemove.Text = "< Remove selected";
             this.BtnRemove.UseVisualStyleBackColor = false;
             this.BtnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
@@ -220,7 +229,7 @@
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(389, 32);
             this.BtnAdd.TabIndex = 16;
-            this.BtnAdd.Text = "Add selected";
+            this.BtnAdd.Text = "Add selected >";
             this.BtnAdd.UseVisualStyleBackColor = false;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
@@ -264,6 +273,7 @@
             // PnlLeft
             // 
             this.PnlLeft.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PnlLeft.Controls.Add(this.LblNameUWP);
             this.PnlLeft.Controls.Add(this.LblMainMenu);
             this.PnlLeft.Controls.Add(this.ChkShowUWPSystem);
             this.PnlLeft.Controls.Add(this.LstUWP);
@@ -274,6 +284,19 @@
             this.PnlLeft.Name = "PnlLeft";
             this.PnlLeft.Size = new System.Drawing.Size(358, 745);
             this.PnlLeft.TabIndex = 26;
+            // 
+            // LblNameUWP
+            // 
+            this.LblNameUWP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblNameUWP.AutoEllipsis = true;
+            this.LblNameUWP.AutoSize = true;
+            this.LblNameUWP.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNameUWP.Location = new System.Drawing.Point(16, 101);
+            this.LblNameUWP.Name = "LblNameUWP";
+            this.LblNameUWP.Size = new System.Drawing.Size(36, 13);
+            this.LblNameUWP.TabIndex = 26;
+            this.LblNameUWP.Text = "Name";
             // 
             // LblMainMenu
             // 
@@ -295,6 +318,7 @@
             // PnlRight
             // 
             this.PnlRight.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PnlRight.Controls.Add(this.LblNameUWPRemove);
             this.PnlRight.Controls.Add(this.LstUWPRemove);
             this.PnlRight.Controls.Add(this.LblRemoveCount);
             this.PnlRight.Controls.Add(this.BtnClear);
@@ -303,6 +327,19 @@
             this.PnlRight.Name = "PnlRight";
             this.PnlRight.Size = new System.Drawing.Size(358, 745);
             this.PnlRight.TabIndex = 27;
+            // 
+            // LblNameUWPRemove
+            // 
+            this.LblNameUWPRemove.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblNameUWPRemove.AutoEllipsis = true;
+            this.LblNameUWPRemove.AutoSize = true;
+            this.LblNameUWPRemove.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNameUWPRemove.Location = new System.Drawing.Point(14, 101);
+            this.LblNameUWPRemove.Name = "LblNameUWPRemove";
+            this.LblNameUWPRemove.Size = new System.Drawing.Size(36, 13);
+            this.LblNameUWPRemove.TabIndex = 27;
+            this.LblNameUWPRemove.Text = "Name";
             // 
             // panel1
             // 
@@ -328,21 +365,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoEllipsis = true;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 31);
+            this.label2.Size = new System.Drawing.Size(181, 32);
             this.label2.TabIndex = 25;
             this.label2.Text = "Apps && features";
             // 
             // LnkMSSettingsAppsandfeatures
             // 
             this.LnkMSSettingsAppsandfeatures.AutoSize = true;
-            this.LnkMSSettingsAppsandfeatures.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LnkMSSettingsAppsandfeatures.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LnkMSSettingsAppsandfeatures.LinkColor = System.Drawing.Color.DeepPink;
-            this.LnkMSSettingsAppsandfeatures.Location = new System.Drawing.Point(15, 61);
+            this.LnkMSSettingsAppsandfeatures.Location = new System.Drawing.Point(13, 67);
             this.LnkMSSettingsAppsandfeatures.Name = "LnkMSSettingsAppsandfeatures";
-            this.LnkMSSettingsAppsandfeatures.Size = new System.Drawing.Size(284, 20);
+            this.LnkMSSettingsAppsandfeatures.Size = new System.Drawing.Size(252, 17);
             this.LnkMSSettingsAppsandfeatures.TabIndex = 24;
             this.LnkMSSettingsAppsandfeatures.TabStop = true;
             this.LnkMSSettingsAppsandfeatures.Text = "Apps && Features (opens the Settings app)";
@@ -365,26 +402,37 @@
             this.MainMenu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.LinkGithub,
-            this.Info});
+            this.LinkGitHub,
+            this.CheckNewReleases,
+            this.AppInfo});
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MainMenu.Size = new System.Drawing.Size(229, 64);
+            this.MainMenu.Size = new System.Drawing.Size(229, 94);
             // 
-            // LinkGithub
+            // LinkGitHub
             // 
-            this.LinkGithub.Image = ((System.Drawing.Image)(resources.GetObject("LinkGithub.Image")));
-            this.LinkGithub.Name = "LinkGithub";
-            this.LinkGithub.Size = new System.Drawing.Size(228, 30);
-            this.LinkGithub.Text = "github/bloatbox";
-            this.LinkGithub.Click += new System.EventHandler(this.LinkGithub_Click);
+            this.LinkGitHub.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkGitHub.Image = ((System.Drawing.Image)(resources.GetObject("LinkGitHub.Image")));
+            this.LinkGitHub.Name = "LinkGitHub";
+            this.LinkGitHub.Size = new System.Drawing.Size(228, 30);
+            this.LinkGitHub.Text = "github/bloatbox";
+            this.LinkGitHub.Click += new System.EventHandler(this.LinkGitHub_Click);
             // 
-            // Info
+            // CheckNewReleases
             // 
-            this.Info.Name = "Info";
-            this.Info.Size = new System.Drawing.Size(228, 30);
-            this.Info.Text = "Info";
-            this.Info.Click += new System.EventHandler(this.Info_Click);
+            this.CheckNewReleases.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckNewReleases.Name = "CheckNewReleases";
+            this.CheckNewReleases.Size = new System.Drawing.Size(228, 30);
+            this.CheckNewReleases.Text = "Check for updates";
+            this.CheckNewReleases.Click += new System.EventHandler(this.CheckNewReleases_Click);
+            // 
+            // AppInfo
+            // 
+            this.AppInfo.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AppInfo.Name = "AppInfo";
+            this.AppInfo.Size = new System.Drawing.Size(228, 30);
+            this.AppInfo.Text = "Info";
+            this.AppInfo.Click += new System.EventHandler(this.AppInfo_Click);
             // 
             // MainWindow
             // 
@@ -434,8 +482,11 @@
         private System.Windows.Forms.LinkLabel LnkMSSettingsAppsandfeatures;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip MainMenu;
-        private System.Windows.Forms.ToolStripMenuItem LinkGithub;
-        private System.Windows.Forms.ToolStripMenuItem Info;
+        private System.Windows.Forms.ToolStripMenuItem LinkGitHub;
+        private System.Windows.Forms.ToolStripMenuItem AppInfo;
+        private System.Windows.Forms.Label LblNameUWP;
+        private System.Windows.Forms.Label LblNameUWPRemove;
+        private System.Windows.Forms.ToolStripMenuItem CheckNewReleases;
     }
 }
 

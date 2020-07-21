@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Management.Automation;
+using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 namespace Bloatbox
 {
@@ -14,11 +16,66 @@ namespace Bloatbox
 
         private List<string> _listSystemApps = new List<string>();
 
+        // General strings
         private string _successRemove = "Successfully removed:\n";
+
         private string _failedRemove = "Failed to remove:\n";
         private readonly string _installCount = "My apps";
         private readonly string _removeCount = "Remove apps";
         private readonly string _nothingCount = "No apps to uninstall!";
+
+        // Update strings
+        private readonly string _releaseURL = "https://raw.githubusercontent.com/builtbybel/bloatbox/master/latest.txt";
+
+        private readonly string _releaseUpToDate = "There are currently no updates available.";
+        private readonly string _releaseUnofficial = "You are using an unoffical version of Bloatbox.";
+
+        public Version CurrentVersion = new Version(Application.ProductVersion);
+        public Version LatestVersion;
+
+        /// <summary>
+        /// Check for updates
+        /// </summary>
+        private void CheckNewReleases_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WebRequest hreq = WebRequest.Create(_releaseURL);
+                hreq.Timeout = 10000;
+                hreq.Headers.Set("Cache-Control", "no-cache, no-store, must-revalidate");
+
+                WebResponse hres = hreq.GetResponse();
+                StreamReader sr = new StreamReader(hres.GetResponseStream());
+
+                LatestVersion = new Version(sr.ReadToEnd().Trim());
+
+                // Done and dispose!
+                sr.Dispose();
+                hres.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); // Update check failed!
+            }
+
+            var equals = LatestVersion.CompareTo(CurrentVersion);
+
+            if (equals == 0)
+            {
+                MessageBox.Show(_releaseUpToDate, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information); // Up-to-date
+            }
+            else if (equals < 0)
+            {
+                MessageBox.Show(_releaseUnofficial, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning); // Unofficial
+            }
+            else // New release available!
+            {
+                if (MessageBox.Show("There is a new version available #" + LatestVersion + "\nYour are using version #" + CurrentVersion + "\n\nDo you want to open the @github/releases page?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) // New release available!
+                {
+                    Process.Start("https://github.com/builtbybel/bloatbox/releases/tag/" + LatestVersion);
+                }
+            }
+        }
 
         public MainWindow()
         {
@@ -147,7 +204,7 @@ namespace Bloatbox
             {   //Try to open the file
                 Database = System.IO.File.OpenText("bloatbox.txt");
             }
-            catch (System.IO.FileNotFoundException)                                     // bloatbox.txt does not exisits!?
+            catch (System.IO.FileNotFoundException)                                     // bloatbox.txt does not exists!?
             {
                 System.IO.StreamWriter sw = System.IO.File.CreateText("bloatbox.txt");    // Create it!
                 sw.Write(Resources.bloatbox);                                             // Populate it with built in preset
@@ -260,20 +317,19 @@ namespace Bloatbox
             this.MainMenu.Show(Cursor.Position.X, Cursor.Position.Y);
         }
 
-        private void Info_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" +
-        "\n\nThe alternate Windows 10 app manager.\r\n" +
-        "This project was intended as an extension for github.com/spydish\r\n\n" +
-        "Credits and other notes on github.com/bloatbox\r\n" +
-        "(C) 2020, Builtbybel (former Mirinsoft)",
-        "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void LinkGithub_Click(object sender, EventArgs e)
+        private void LinkGitHub_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/builtbybel/bloatbox");
         }
 
+        private void AppInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" +
+            "\n\nThe alternate Windows 10 app manager.\r\n\n" +
+            "This project was intended as an extension for github.com/spydish\r\n\n" +
+            "Credits and other notes on github.com/bloatbox\r\n" +
+            "(C) 2020, Builtbybel (former Mirinsoft)",
+            "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
