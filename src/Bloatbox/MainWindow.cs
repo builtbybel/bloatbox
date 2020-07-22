@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -17,12 +18,20 @@ namespace Bloatbox
         private List<string> _listSystemApps = new List<string>();
 
         // General strings
-        private string _successRemove = "Successfully removed:\n";
-
-        private string _failedRemove = "Failed to remove:\n";
         private readonly string _installCount = "My apps";
+
         private readonly string _removeCount = "Remove apps";
         private readonly string _nothingCount = "No apps to uninstall!";
+
+        // Community strings
+        private readonly string _uriPkg = "https://github.com/Sycnex/Windows10Debloater/raw/master/Windows10Debloater.ps1";
+        private readonly string _infoPkg = "This will download the PowerShell based Community version \"Windows10Debloater.ps1\"" +
+                                                  "\n\nThis is a interactive script with prompts which runs the following functions:" +
+                                                  "\n- Debloat (a list of Bloatware that is removed can be viewed on the authors GitHub repository)" +
+                                                  "\n- Removes registry keys leftover that are associated with the bloatware apps" +
+                                                  "\n- Protect privacy by stopping some telemetry functions, stops Cortana from being used as your Search Index, disables unneccessary scheduled tasks, and more" +
+                                                  "\n- Stop-EdgePDF" +
+                                                   "\r\n\nDo you wish to continue?\r\n\nMore information about this script can be found here https://github.com/Sycnex/Windows10Debloater";
 
         // Update strings
         private readonly string _releaseURL = "https://raw.githubusercontent.com/builtbybel/bloatbox/master/latest.txt";
@@ -36,7 +45,7 @@ namespace Bloatbox
         /// <summary>
         /// Check for updates
         /// </summary>
-        private void CheckNewReleases_Click(object sender, EventArgs e)
+        private void CheckUpdates_Click(object sender, EventArgs e)
         {
             try
             {
@@ -90,6 +99,9 @@ namespace Bloatbox
             BtnClear.Text = "\ue894";       // Clear
         }
 
+        /// <summary>
+        /// Retrieve UWP apps
+        /// </summary>
         private void GetUWP()
         {
             LstUWP.Items.Clear();
@@ -110,7 +122,7 @@ namespace Bloatbox
             string appInst = LstUWP.Items.ToString();
             foreach (string item in LstUWPRemove.Items) if (item.Any(appInst.Contains)) LstUWP.Items.Remove(item);
 
-            RefreshInstalled();
+            RefreshUWP();
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
@@ -118,8 +130,14 @@ namespace Bloatbox
             GetUWP();
         }
 
+        /// <summary>
+        /// App uninstaller
+        /// </summary>
         private string RemoveUWP()
         {
+            string success = "Successfully removed:\n";
+            string failed = "Failed to remove:\n";
+
             foreach (var item in LstUWPRemove.Items)
             {
                 powerShell.Commands.Clear();
@@ -133,31 +151,30 @@ namespace Bloatbox
                 {
                     if (p.Activity.Contains(item.ToString()) && p.StatusDescription == "Completed")     // Removed successfully
                     {
-                        _successRemove += "\t" + item.ToString() + "\n";
-                        // Console.WriteLine( _successRemove + item.ToString());
+                        success += "\t" + item.ToString() + "\n";
+                        // Console.WriteLine(success + item.ToString());
                         break;
                     }
                     else if (p.Activity.Contains(item.ToString()) && p.StatusDescription == "Error")    // NOT removed
                     {
-                        if (!_failedRemove.Contains(item.ToString())) _failedRemove += "\t" + item.ToString() + "\n";
-                        // Console.WriteLine(_failedRemove + p.Activity);
+                        if (!failed.Contains(item.ToString())) failed += "\t" + item.ToString() + "\n";
+                        // Console.WriteLine(failed + p.Activity);
                     }
                 }
 
                 powerShell.Streams.Progress.Clear();
-
-                /* Detailed log OFF!
+                /* Detailed lof OFF
                 if (powerShell.HadErrors) foreach (var p in powerShell.Streams.Error) { Console.WriteLine("\n\nERROR:\n" + p.ToString() + "\n\n"); } */
             }
 
             string outputPS = "";
-            if (powerShell.HadErrors) { outputPS = _successRemove + "\n" + _failedRemove; powerShell.Streams.Error.Clear(); }
-            else { outputPS = _successRemove; }
+            if (powerShell.HadErrors) { outputPS = success + "\n" + failed; powerShell.Streams.Error.Clear(); }
+            else { outputPS = success; }
 
             return outputPS;
         }
 
-        private void RefreshInstalled()
+        private void RefreshUWP()
         {
             int installed = LstUWP.Items.Count;
             int remove = LstUWPRemove.Items.Count;
@@ -240,7 +257,7 @@ namespace Bloatbox
                 // LstUWP.Items.Remove(item);
             }
             LstUWP.Items.Clear();
-            RefreshInstalled();
+            RefreshUWP();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -253,7 +270,7 @@ namespace Bloatbox
                     LstUWPRemove.Items.Add(LstUWP.SelectedItem);
                     LstUWP.Items.Remove(LstUWP.SelectedItem);
                 }
-                RefreshInstalled();
+                RefreshUWP();
             }
         }
 
@@ -265,7 +282,7 @@ namespace Bloatbox
                 // LstUWP.Items.Remove(item);
             }
             LstUWPRemove.Items.Clear();
-            RefreshInstalled();
+            RefreshUWP();
         }
 
         private void BtnRemove_Click(object sender, EventArgs e)
@@ -278,7 +295,7 @@ namespace Bloatbox
                     LstUWP.Items.Add(LstUWPRemove.SelectedItem);
                     LstUWPRemove.Items.Remove(LstUWPRemove.SelectedItem);
                 }
-                RefreshInstalled();
+                RefreshUWP();
             }
         }
 
@@ -307,11 +324,6 @@ namespace Bloatbox
             BtnRemove_Click(sender, e);
         }
 
-        private void LnkMSSettingsAppsandfeatures_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("ms-settings:appsfeatures");
-        }
-
         private void LblMainMenu_Click(object sender, EventArgs e)
         {
             this.MainMenu.Show(Cursor.Position.X, Cursor.Position.Y);
@@ -330,6 +342,56 @@ namespace Bloatbox
             "Credits and other notes on github.com/bloatbox\r\n" +
             "(C) 2020, Builtbybel (former Mirinsoft)",
             "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Download optional community version Windows10Debloater.ps1
+        /// </summary>
+        private void LnkGetCommunityVer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (MessageBox.Show(_infoPkg, this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                PBar.Visible = true;
+                var pkg = _uriPkg;
+
+                try
+                {
+                    WebClient wc = new WebClient();
+                    wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressChanged);
+                    wc.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
+
+                    wc.DownloadFileAsync(new Uri(pkg.Trim()), @"Windows10Debloater.ps1");
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.Message, this.Text); }
+            }
+        }
+
+        public void DownloadProgressChanged(Object sender, DownloadProgressChangedEventArgs e)
+        {
+            PBar.Value = e.ProgressPercentage;
+        }
+
+        public void Completed(object sender, AsyncCompletedEventArgs e)
+        {
+            try
+            {
+                var ps1File = @"Windows10Debloater.ps1";
+                var startInfo = new ProcessStartInfo()
+                {
+                    FileName = "powershell.exe",
+                    Arguments = $"-NoProfile -ExecutionPolicy unrestricted -file \"{ps1File}\"",
+                    UseShellExecute = true,
+                    CreateNoWindow = true
+                };
+                Process.Start(startInfo);
+                PBar.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text);
+                PBar.Visible = false;
+            }
         }
     }
 }

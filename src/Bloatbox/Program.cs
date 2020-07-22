@@ -11,14 +11,20 @@ namespace Bloatbox
         internal static string GetCurrentVersionTostring() => new Version(Application.ProductVersion).ToString(3);
 
         /// <summary>
-        /// Der Haupteinstiegspunkt für die Anwendung.
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
       {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+
+            if (Environment.OSVersion.Version.Build < 9200)
+
+                MessageBox.Show("You are running Bloatbox on a system older than Windows 10. Bloatbox is limited to Windows 10 ONLY.", "Bloatbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                Application.Run(new MainWindow());
+
         }
     }
 }
