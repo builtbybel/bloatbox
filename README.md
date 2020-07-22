@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">☑️ Alternate Windows 10 app manager for removing Modern/UWP apps</h4>
+<h4 align="center">☑️ Get rid of bloatware and clean your Windows 10 Start menu</h4>
 
 <p align="center">
 <a href="https://github.com/builtbybel/bloatbox/releases/latest" target="_blank">
