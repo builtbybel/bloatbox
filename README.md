@@ -56,4 +56,5 @@ This project is partly based upon
 
 This software uses the following packages:
 
+- [Windows10Debloater](https://github.com/Sycnex/Windows10Debloater)
 - [Icon by FFra](https://www.deviantart.com/ffra/art/MAXIMAL-Icons-Updated-387287801)
