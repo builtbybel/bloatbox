@@ -6,16 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Bloatbox
 {
     public partial class MainWindow : Form
     {
-        private PowerShell powerShell = PowerShell.Create();
-
         private List<string> _listSystemApps = new List<string>();
+        private List<string> _listFreshStart = new List<string>();
+        private Config c = new Config();
+
+        private readonly PowerShell powerShell = PowerShell.Create();
 
         // General strings
         private readonly string _installCount = "My apps";
@@ -23,8 +27,18 @@ namespace Bloatbox
         private readonly string _removeCount = "Remove apps";
         private readonly string _nothingCount = "No apps to uninstall!";
 
+        private readonly string _infoFreshStart = "This will add all the annoying bloatware apps, pre-installed on Windows 10 including some apps your PC manufacturer included to the removal list.\r\n\n" +
+                                                  "Most of these apps are garbage, but if you find important stuff on the list just remove it from the right box before hitting \"Uninstall\".";
+
+        private readonly string _infoApp = "Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" + 
+                                            "\n\nThe alternate Windows 10 app manager.\r\n\n" +
+                                            "This project was intended as an extension for github.com/spydish\r\n\n" +
+                                            "Credits and other notes on github.com/bloatbox\r\n" +
+                                            "(C) 2020, Builtbybel (former Mirinsoft)";
+
         // Community strings
         private readonly string _uriPkg = "https://github.com/Sycnex/Windows10Debloater/raw/master/Windows10Debloater.ps1";
+
         private readonly string _infoPkg = "This will download the PowerShell based Community version \"Windows10Debloater.ps1\"" +
                                                   "\n\nThis is a interactive script with prompts which runs the following functions:" +
                                                   "\n- Debloat (a list of Bloatware that is removed can be viewed on the authors GitHub repository)" +
@@ -167,7 +181,7 @@ namespace Bloatbox
                 if (powerShell.HadErrors) foreach (var p in powerShell.Streams.Error) { Console.WriteLine("\n\nERROR:\n" + p.ToString() + "\n\n"); } */
             }
 
-            string outputPS = "";
+            string outputPS;
             if (powerShell.HadErrors) { outputPS = success + "\n" + failed; powerShell.Streams.Error.Clear(); }
             else { outputPS = success; }
 
@@ -180,6 +194,8 @@ namespace Bloatbox
             int remove = LstUWPRemove.Items.Count;
             LblInstalledCount.Text = _installCount + " (" + installed.ToString() + ")";
             LblRemoveCount.Text = _removeCount + " (" + remove.ToString() + ")";
+
+            if (LstUWPRemove.Items.Count == 0) LnkStartFresh.Visible = true; else LnkStartFresh.Visible = false;
 
             if (installed == 0)
                 BtnAddAll.Enabled =
@@ -212,7 +228,6 @@ namespace Bloatbox
         /// <summary>
         ///  Collect hidden system apps from file
         /// </summary>
-        ///
         private void GetUWPSystem()
         {
             System.IO.StreamReader Database = null;
@@ -224,7 +239,7 @@ namespace Bloatbox
             catch (System.IO.FileNotFoundException)                                     // bloatbox.txt does not exists!?
             {
                 System.IO.StreamWriter sw = System.IO.File.CreateText("bloatbox.txt");    // Create it!
-                sw.Write(Resources.bloatbox);                                             // Populate it with built in preset
+                sw.Write(Resources.Bloatbox);                                             // Populate it with built in preset
                 sw.Close();
 
                 Database = System.IO.File.OpenText("bloatbox.txt");
@@ -299,6 +314,22 @@ namespace Bloatbox
             }
         }
 
+        /// <summary>
+        /// Fresh start feature which loads bloatware and crapware from file
+        /// </summary>
+        private void LnkStartFresh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (MessageBox.Show(_infoFreshStart, this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                string tempPath = Path.GetTempPath() + @"\Bloatbox-Freshstart" + Guid.NewGuid() + ".xml";       // Create a temp FilePath
+                StreamWriter sW = new StreamWriter(tempPath, false, Encoding.Unicode);                          // Open a file at the path
+                sW.Write(Resources.Freshstart);                                                                 // Load data from resource into tempfile
+                sW.Close();                                                                                     // Close the file
+                LoadPreset(tempPath);
+                File.Delete(tempPath);
+            }
+        }
+
         private void BtnRemoveUWP_Click(object sender, EventArgs e)
         {
             if (LstUWPRemove.Items.Count == 0) { MessageBox.Show(_nothingCount); }
@@ -336,12 +367,7 @@ namespace Bloatbox
 
         private void AppInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" +
-            "\n\nThe alternate Windows 10 app manager.\r\n\n" +
-            "This project was intended as an extension for github.com/spydish\r\n\n" +
-            "Credits and other notes on github.com/bloatbox\r\n" +
-            "(C) 2020, Builtbybel (former Mirinsoft)",
-            "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(_infoApp, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
@@ -391,6 +417,34 @@ namespace Bloatbox
             {
                 MessageBox.Show(ex.Message, this.Text);
                 PBar.Visible = false;
+            }
+        }
+
+        private void LoadPreset(string name)
+        {
+            if (File.Exists(name) == true)
+            {
+                var serializer = new XmlSerializer(typeof(Config));
+                using (var stream = File.OpenRead(name))
+                {
+                    c = (Config)(serializer.Deserialize(stream));
+                }
+
+                _listFreshStart = c.Bloatware;
+
+                LstUWPRemove.Items.Clear();
+                foreach (var item in _listFreshStart) LstUWPRemove.Items.Add(item);
+
+                RefreshUWP();
+            }
+        }
+
+        public class Config
+        {
+            public List<string> Bloatware
+            {
+                get;
+                set;
             }
         }
     }

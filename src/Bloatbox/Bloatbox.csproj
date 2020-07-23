@@ -86,8 +86,8 @@
     </Compile>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -105,7 +105,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bloatbox.ico" />
-    <None Include="Resources\bloatbox.txt" />
+    <None Include="Resources\Freshstart.xml" />
+    <None Include="Resources\Bloatbox.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
