@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h2 align="center">☑️ Goodbye, Bloatware!</h2>
+<h3 align="center">☑️ Goodbye, Bloatware!</h3>
 
 <p align="center">
 <a href="https://github.com/builtbybel/bloatbox/releases/latest" target="_blank">
