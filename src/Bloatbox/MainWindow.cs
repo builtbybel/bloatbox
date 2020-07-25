@@ -30,7 +30,7 @@ namespace Bloatbox
         private readonly string _infoFreshStart = "This will add all the annoying bloatware apps, pre-installed on Windows 10 including some apps your PC manufacturer included to the removal list.\r\n\n" +
                                                   "Most of these apps are garbage, but if you find important stuff on the list just remove it from the right box before hitting \"Uninstall\".";
 
-        private readonly string _infoApp = "Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" + 
+        private readonly string _infoApp = "Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" +
                                             "\n\nThe alternate Windows 10 app manager.\r\n\n" +
                                             "This project was intended as an extension for github.com/spydish\r\n\n" +
                                             "Credits and other notes on github.com/bloatbox\r\n" +
@@ -230,19 +230,19 @@ namespace Bloatbox
         /// </summary>
         private void GetUWPSystem()
         {
-            System.IO.StreamReader Database = null;
+            StreamReader Database = null;
 
             try
             {   //Try to open the file
-                Database = System.IO.File.OpenText("bloatbox.txt");
+                Database = File.OpenText("bloatbox.txt");
             }
-            catch (System.IO.FileNotFoundException)                                     // bloatbox.txt does not exists!?
+            catch (FileNotFoundException)                                     // bloatbox.txt does not exists!?
             {
-                System.IO.StreamWriter sw = System.IO.File.CreateText("bloatbox.txt");    // Create it!
+                StreamWriter sw = File.CreateText("bloatbox.txt");    // Create it!
                 sw.Write(Resources.Bloatbox);                                             // Populate it with built in preset
                 sw.Close();
 
-                Database = System.IO.File.OpenText("bloatbox.txt");
+                Database = File.OpenText("bloatbox.txt");
             }
             finally
             {
