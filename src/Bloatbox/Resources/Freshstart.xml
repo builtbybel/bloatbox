@@ -2,7 +2,12 @@
 <Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Bloatware>
   	<string>4DF9E0F8.Netflix</string>
+	<string>E046963F.LenovoCompanion</string>
     <string>king.com.CandyCrushSaga</string>
+	<string>king.com.CandyCrushFriends</string>
+	<string>king.com.FarmHeroesSaga</string>
+	<string>LenovoCorporation.LenovoID</string>
+<string>LenovoCorporation.LenovoSettings</string>
     <string>Microsoft.549981C3F5F10</string>
 	  <string>Microsoft.BingNews</string>
     <string>Microsoft.BingWeather</string>

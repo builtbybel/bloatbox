@@ -30,7 +30,7 @@ namespace Bloatbox
         private readonly string _infoFreshStart = "This will add all the annoying bloatware apps, pre-installed on Windows 10 including some apps your PC manufacturer included to the removal list.\r\n\n" +
                                                   "Most of these apps are garbage, but if you find important stuff on the list just remove it from the right box before hitting \"Uninstall\".";
 
-        private readonly string _infoApp = "Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" + 
+        private readonly string _infoApp = "Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" +
                                             "\n\nThe alternate Windows 10 app manager.\r\n\n" +
                                             "This project was intended as an extension for github.com/spydish\r\n\n" +
                                             "Credits and other notes on github.com/bloatbox\r\n" +
@@ -128,14 +128,18 @@ namespace Bloatbox
             foreach (PSObject result in powerShell.Invoke())
             {
                 string current = result.ToString();
+                // Show ONLY NON-SYSTEM apps by comparing found apps with file Bloatbox.txt
                 if (_listSystemApps != null) if ((_listSystemApps.Any(current.Contains)) && !ChkShowUWPSystem.Checked) continue;
+
                 if (LstUWP.Items.Contains(Regex.Replace(current, "(@{Name=)|(})", ""))) continue;
                 LstUWP.Items.Add(Regex.Replace(current, "(@{Name=)|(})", ""));
             }
 
-            string appInst = LstUWP.Items.ToString();
-            foreach (string item in LstUWPRemove.Items) if (item.Any(appInst.Contains)) LstUWP.Items.Remove(item);
+            // Compare left and rights apps list and remove differences
+            string compare = LstUWP.Items.ToString();
+            foreach (string item in LstUWPRemove.Items) if (item.Any(compare.Contains)) LstUWP.Items.Remove(item);
 
+            // Just a re-count!
             RefreshUWP();
         }
 
@@ -177,7 +181,7 @@ namespace Bloatbox
                 }
 
                 powerShell.Streams.Progress.Clear();
-                /* Detailed lof OFF
+                /* Detailed log OFF
                 if (powerShell.HadErrors) foreach (var p in powerShell.Streams.Error) { Console.WriteLine("\n\nERROR:\n" + p.ToString() + "\n\n"); } */
             }
 
@@ -209,13 +213,13 @@ namespace Bloatbox
             if (remove == 0)
                 BtnRemoveAll.Enabled =
                 BtnRemove.Enabled =
-                BtnRemoveUWP.Enabled =
+                BtnRunUninstaller.Enabled =
                 BtnClear.Enabled =
                 false;
             else
                 BtnRemoveAll.Enabled =
                 BtnRemove.Enabled =
-                BtnRemoveUWP.Enabled =
+                BtnRunUninstaller.Enabled =
                 BtnClear.Enabled =
                 true;
         }
@@ -315,6 +319,24 @@ namespace Bloatbox
         }
 
         /// <summary>
+        /// Run the app uninstaller
+        /// </summary>
+        private void BtnRunUninstaller_Click(object sender, EventArgs e)
+        {
+            if (LstUWPRemove.Items.Count == 0) { MessageBox.Show(_nothingCount); }
+            else
+            {
+                Enabled = false;
+
+                MessageBox.Show(RemoveUWP());
+
+                LstUWPRemove.Items.Clear();
+                BtnRefresh_Click(null, null);
+                Enabled = true;
+            }
+        }
+
+        /// <summary>
         /// Fresh start feature which loads bloatware and crapware from file
         /// </summary>
         private void LnkStartFresh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -327,21 +349,8 @@ namespace Bloatbox
                 sW.Close();                                                                                     // Close the file
                 LoadPreset(tempPath);
                 File.Delete(tempPath);
-            }
-        }
 
-        private void BtnRemoveUWP_Click(object sender, EventArgs e)
-        {
-            if (LstUWPRemove.Items.Count == 0) { MessageBox.Show(_nothingCount); }
-            else
-            {
-                Enabled = false;
-
-                MessageBox.Show(RemoveUWP()); // Run app uninstaller!
-
-                LstUWPRemove.Items.Clear();
                 BtnRefresh_Click(null, null);
-                Enabled = true;
             }
         }
 
