@@ -61,6 +61,6 @@ This software uses the following packages:
 
 ---
 
-> [mirinsoft.com](https://www.mirinsoft.com) &nbsp;&middot;&nbsp;
+> [builtbybel.com](https://www.builtbybel.com) &nbsp;&middot;&nbsp;
 > GitHub [@builtbybel](https://github.com/builtbybel) &nbsp;&middot;&nbsp;
 > Twitter [@builtbybel](https://twitter.com/builtbybel)
