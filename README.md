@@ -58,7 +58,8 @@ The community package for Bloatbox adds support for several advanced scripting f
 - Disable of Windows Defender (NOT recommended! I can highly recommend using Windows Defender on consumer versions of Windows 10)
 - Blocking telemetry via firewall and host files. Rules are provided by [crazy-max/WindowsSpyBlocker](https://github.com/crazy-max/WindowsSpyBlocker)
 			  
-[Check also the Marketplace for new script files](https://github.com/builtbybel/bloatbox/tree/master/marketplace)	
+Check also the [Marketplace for new script files](https://github.com/builtbybel/bloatbox/tree/master/marketplace)
+Script files provided for [Spydish](https://github.com/builtbybel/spydish) or my older app SharpApp are fully compatible with Bloatbox. You will find some on my site [here](https://www.builtbybel.com/marketplace)
 
 All scripts included to the latest package can be viewed [here](https://github.com/builtbybel/bloatbox/tree/master/marketplace)
 
