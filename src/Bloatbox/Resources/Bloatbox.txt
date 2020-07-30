@@ -5,6 +5,7 @@ F46D4000-FD22-4DB4-AC8E-4E1DDDE828FE
 InputApp
 Microsoft.AAD.BrokerPlugin
 Microsoft.AccountsControl
+Microsoft.Advertising.Xaml
 Microsoft.AsyncTextService
 Microsoft.BioEnrollment
 Microsoft.CredDialogHost
@@ -12,9 +13,14 @@ Microsoft.ECApp
 Microsoft.LockApp
 Microsoft.MicrosoftEdge
 Microsoft.MicrosoftEdgeDevToolsClient
+Microsoft.NET
 Microsoft.PPIProjection
+Microsoft.Services.Store.Engagement
+Microsoft.VCLibs
 Microsoft.Win32WebViewHost
-Microsoft.Advertising.Xaml
+Microsoft.WindowsStore
+Microsoft.WindowsCalculator
+Microsoft.XboxGameCallableUI
 Microsoft.Windows.Apprep.ChxApp
 Microsoft.Windows.AssignedAccessLockApp
 Microsoft.Windows.CapturePicker
@@ -31,11 +37,6 @@ Microsoft.Windows.SecHealthUI
 Microsoft.Windows.SecureAssessmentBrowser
 Microsoft.Windows.ShellExperienceHost
 Microsoft.Windows.XGpuEjectDialog
-Microsoft.VCLibs
-Microsoft.NET
-Microsoft.WindowsStore
-Microsoft.WindowsCalculator
-Microsoft.XboxGameCallableUI
 Windows.CBSPreview
 windows.immersivecontrolpanel
 Windows.PrintDialog

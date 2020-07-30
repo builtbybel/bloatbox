@@ -52,17 +52,22 @@
             this.LblHeader = new System.Windows.Forms.Label();
             this.LnkGetCommunityVer = new System.Windows.Forms.LinkLabel();
             this.LblsAction = new System.Windows.Forms.Label();
+            this.BtnMore = new System.Windows.Forms.Button();
             this.BtnRunUninstaller = new System.Windows.Forms.Button();
             this.MainMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.LinkGitHub = new System.Windows.Forms.ToolStripMenuItem();
             this.CheckUpdates = new System.Windows.Forms.ToolStripMenuItem();
             this.AppInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PnlMiddleB = new System.Windows.Forms.Panel();
+            this.PSMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Marketplace = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.PnlLeft.SuspendLayout();
             this.PnlRight.SuspendLayout();
             this.PnlMiddle.SuspendLayout();
             this.MainMenu.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.PnlMiddleB.SuspendLayout();
+            this.PSMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // ChkShowUWPSystem
@@ -77,7 +82,7 @@
             this.ChkShowUWPSystem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.ChkShowUWPSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChkShowUWPSystem.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkShowUWPSystem.Location = new System.Drawing.Point(15, 710);
+            this.ChkShowUWPSystem.Location = new System.Drawing.Point(11, 708);
             this.ChkShowUWPSystem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ChkShowUWPSystem.Name = "ChkShowUWPSystem";
             this.ChkShowUWPSystem.Size = new System.Drawing.Size(146, 31);
@@ -305,9 +310,9 @@
             this.PnlRight.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PnlRight.Controls.Add(this.LnkStartFresh);
             this.PnlRight.Controls.Add(this.LblrName);
-            this.PnlRight.Controls.Add(this.LstUWPRemove);
             this.PnlRight.Controls.Add(this.LblRemoveCount);
             this.PnlRight.Controls.Add(this.BtnClear);
+            this.PnlRight.Controls.Add(this.LstUWPRemove);
             this.PnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.PnlRight.Location = new System.Drawing.Point(794, 0);
             this.PnlRight.Name = "PnlRight";
@@ -318,6 +323,7 @@
             // 
             this.LnkStartFresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LnkStartFresh.AutoEllipsis = true;
+            this.LnkStartFresh.BackColor = System.Drawing.Color.Transparent;
             this.LnkStartFresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LnkStartFresh.LinkColor = System.Drawing.Color.DeepPink;
             this.LnkStartFresh.Location = new System.Drawing.Point(15, 314);
@@ -341,7 +347,6 @@
             // 
             // PnlMiddle
             // 
-            this.PnlMiddle.AutoScroll = true;
             this.PnlMiddle.Controls.Add(this.PBar);
             this.PnlMiddle.Controls.Add(this.LblHeader);
             this.PnlMiddle.Controls.Add(this.LnkGetCommunityVer);
@@ -350,10 +355,11 @@
             this.PnlMiddle.Controls.Add(this.BtnAdd);
             this.PnlMiddle.Controls.Add(this.BtnRemove);
             this.PnlMiddle.Controls.Add(this.BtnRemoveAll);
+            this.PnlMiddle.Controls.Add(this.BtnMore);
             this.PnlMiddle.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlMiddle.Location = new System.Drawing.Point(358, 0);
             this.PnlMiddle.Name = "PnlMiddle";
-            this.PnlMiddle.Size = new System.Drawing.Size(436, 369);
+            this.PnlMiddle.Size = new System.Drawing.Size(436, 682);
             this.PnlMiddle.TabIndex = 28;
             // 
             // PBar
@@ -406,6 +412,23 @@
             this.LblsAction.TabIndex = 23;
             this.LblsAction.Text = "Move the apps you want to uninstall to the right side.";
             // 
+            // BtnMore
+            // 
+            this.BtnMore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnMore.AutoSize = true;
+            this.BtnMore.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.BtnMore.FlatAppearance.BorderSize = 0;
+            this.BtnMore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.BtnMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMore.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMore.Location = new System.Drawing.Point(395, 46);
+            this.BtnMore.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnMore.Name = "BtnMore";
+            this.BtnMore.Size = new System.Drawing.Size(41, 43);
+            this.BtnMore.TabIndex = 27;
+            this.BtnMore.UseVisualStyleBackColor = true;
+            this.BtnMore.Click += new System.EventHandler(this.BtnMore_Click);
+            // 
             // BtnRunUninstaller
             // 
             this.BtnRunUninstaller.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -425,6 +448,7 @@
             // 
             // MainMenu
             // 
+            this.MainMenu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.MainMenu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -460,14 +484,38 @@
             this.AppInfo.Text = "Info";
             this.AppInfo.Click += new System.EventHandler(this.AppInfo_Click);
             // 
-            // panel1
+            // PnlMiddleB
             // 
-            this.panel1.Controls.Add(this.BtnRunUninstaller);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(358, 672);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(436, 73);
-            this.panel1.TabIndex = 29;
+            this.PnlMiddleB.Controls.Add(this.BtnRunUninstaller);
+            this.PnlMiddleB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PnlMiddleB.Location = new System.Drawing.Point(358, 672);
+            this.PnlMiddleB.Name = "PnlMiddleB";
+            this.PnlMiddleB.Size = new System.Drawing.Size(436, 73);
+            this.PnlMiddleB.TabIndex = 29;
+            // 
+            // PSMenu
+            // 
+            this.PSMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PSMenu.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PSMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.PSMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Marketplace,
+            this.toolStripSeparator1});
+            this.PSMenu.Name = "MainMenu";
+            this.PSMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.PSMenu.Size = new System.Drawing.Size(211, 60);
+            this.PSMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.PSMenu_ItemClicked);
+            // 
+            // Marketplace
+            // 
+            this.Marketplace.Name = "Marketplace";
+            this.Marketplace.Size = new System.Drawing.Size(210, 28);
+            this.Marketplace.Text = "Visit Marketplace";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
             // 
             // MainWindow
             // 
@@ -475,13 +523,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1152, 745);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PnlMiddleB);
             this.Controls.Add(this.PnlMiddle);
             this.Controls.Add(this.PnlRight);
             this.Controls.Add(this.PnlLeft);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimumSize = new System.Drawing.Size(16, 459);
+            this.MinimumSize = new System.Drawing.Size(880, 459);
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -493,7 +541,8 @@
             this.PnlMiddle.ResumeLayout(false);
             this.PnlMiddle.PerformLayout();
             this.MainMenu.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.PnlMiddleB.ResumeLayout(false);
+            this.PSMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -527,7 +576,11 @@
         private System.Windows.Forms.ProgressBar PBar;
         private System.Windows.Forms.LinkLabel LnkStartFresh;
         private System.Windows.Forms.Button BtnRunUninstaller;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PnlMiddleB;
+        private System.Windows.Forms.Button BtnMore;
+        private System.Windows.Forms.ContextMenuStrip PSMenu;
+        private System.Windows.Forms.ToolStripMenuItem Marketplace;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 
