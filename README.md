@@ -30,6 +30,7 @@ alt="GitHub issues">
 <p align="center">
   <a href="#about">About</a> •
   <a href="#download">Download</a> •
+  <a href="#community-package">Community package</a> •
   <a href="#credits">Credits</a>
 </p>
 
@@ -47,6 +48,30 @@ This code is based on parts of this nice project from [ConditionalException](htt
 
 - (Latest release) [Download](https://github.com/builtbybel/bloatbox/releases)
 - (Source Code) [Download](https://github.com/builtbybel/bloatbox/releases) 
+
+## Community package
+### For advanced users only!
+
+The community package for Bloatbox adds support for several advanced scripting features based upon PowerShell, e.g.
+- Removal of specific pre-installed apps
+- Uninstall of OneDrive 
+- Unping Startmenu tiles 
+- Disable of Windows Defender (NOT recommended! I can highly recommend using Windows Defender on consumer versions of Windows 10)
+- Blocking telemetry via firewall and host files. Rules are provided by [crazy-max/WindowsSpyBlocker](https://github.com/crazy-max/WindowsSpyBlocker)
+- [Marketplace for community script files](https://github.com/builtbybel/bloatbox/tree/master/marketplace)				  
+
+All objects (templates and scripts) included can be viewed [here](https://github.com/builtbybel/spydish/tree/master/scripts)
+
+### How-to Install
+* **[Download](https://github.com/builtbybel/bloatbox/blob/master/marketplace/bloatbox_pkg-EXTRACT_FIRST.zip?raw=true)** the latest `bloatbox_pkg.zip` file.
+* **Extract the package** to Bloatbox installation directory
+* **Restart Bloatbox**
+
+### Intro of community package after Installing
+
+![community-package](https://github.com/builtbybel/bloatbox/blob/master/assets/bloatbox-pkg.gif)
+
+#### This feature is only supported by Bloatbox version 0.14 and higher
 
 ## Credits
 
