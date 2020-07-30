@@ -60,7 +60,7 @@ The community package for Bloatbox adds support for several advanced scripting f
 - Blocking telemetry via firewall and host files. Rules are provided by [crazy-max/WindowsSpyBlocker](https://github.com/crazy-max/WindowsSpyBlocker)
 - [Marketplace for community script files](https://github.com/builtbybel/bloatbox/tree/master/marketplace)				  
 
-All objects (templates and scripts) included can be viewed [here](https://github.com/builtbybel/spydish/tree/master/scripts)
+All script included to the latest package can be viewed [here](https://github.com/builtbybel/bloatbox/tree/master/marketplace)
 
 ### How-to Install
 * **[Download](https://github.com/builtbybel/bloatbox/blob/master/marketplace/bloatbox_pkg-EXTRACT_FIRST.zip?raw=true)** the latest `bloatbox_pkg.zip` file.
