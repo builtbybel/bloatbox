@@ -532,7 +532,6 @@ namespace Bloatbox
                         UseShellExecute = true,
                     };
                     Process.Start(startInfo);
-                    PBar.Visible = false;
                 }
             }
         }
