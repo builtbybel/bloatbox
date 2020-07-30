@@ -517,12 +517,6 @@ namespace Bloatbox
                 //Read ps content line by line
                 using (StreamReader sr = new StreamReader(@"scripts\" + itemName + ".ps1", Encoding.Default))
                 {
-                    StringBuilder content = new StringBuilder();
-
-                    // Writes line by line to the StringBuilder until the end of the file is reached
-                    while (!sr.EndOfStream)
-                        content.AppendLine(sr.ReadLine());
-
                     // PS info
                     MessageBox.Show(_psInfo + string.Join(Environment.NewLine, System.IO.File.ReadAllLines(psDir).Where(s => s.StartsWith("###")).Select(s => s.Substring(3).Replace("###", "\r\n"))));
                 }
