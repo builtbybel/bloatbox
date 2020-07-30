@@ -55,7 +55,7 @@ This code is based on parts of this nice project from [ConditionalException](htt
 The community package for Bloatbox adds support for several advanced scripting features based upon PowerShell, e.g.
 - Removal of specific pre-installed apps
 - Uninstall of OneDrive 
-- Unping Startmenu tiles 
+- Unpinning Startmenu tiles 
 - Disable of Windows Defender (NOT recommended! I can highly recommend using Windows Defender on consumer versions of Windows 10)
 - Blocking telemetry via firewall and host files. Rules are provided by [crazy-max/WindowsSpyBlocker](https://github.com/crazy-max/WindowsSpyBlocker)
 - [Marketplace for community script files](https://github.com/builtbybel/bloatbox/tree/master/marketplace)				  
