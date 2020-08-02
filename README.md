@@ -47,6 +47,7 @@ This code is based on parts of this nice project from [ConditionalException](htt
 ## Download
 
 - (Latest release) [Download](https://github.com/builtbybel/bloatbox/releases)
+- (Mirror on my site) [Download](https://www.builtbybel.com/bloatbox)
 - (Source Code) [Download](https://github.com/builtbybel/bloatbox/releases) 
 
 ## Community package
