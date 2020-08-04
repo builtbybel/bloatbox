@@ -55,9 +55,9 @@ namespace Bloatbox
                                                    "\r\n\nDo you wish to continue?\r\n\nMore information about this script can be found here https://github.com/Sycnex/Windows10Debloater";
 
         // PowerShell strings
-        private readonly string _psInfo = "Disclaimer:\r\n\n";
+        private readonly string _psInfo = "Disclaimer:\r\n";
 
-        private readonly string _psRun = "Do you really want to run this script?";
+        private readonly string _psRun = "Do you really want to run this script?\r\n";
 
         // Update strings
         private readonly string _releaseURL = "https://raw.githubusercontent.com/builtbybel/bloatbox/master/latest.txt";
@@ -493,8 +493,8 @@ namespace Bloatbox
         private void PopulatePS()
         {
             DirectoryInfo dirs = new DirectoryInfo(@"scripts");
-            FileInfo[] listPolicies = dirs.GetFiles("*.ps1");
-            foreach (FileInfo fi in listPolicies)
+            FileInfo[] listPs = dirs.GetFiles("*.ps1");
+            foreach (FileInfo fi in listPs)
             {
                 PSMenu.Items.Add(Path.GetFileNameWithoutExtension(fi.Name));
             }
@@ -514,24 +514,22 @@ namespace Bloatbox
                 Process.Start(_uriMarketplace);
             else
             {
-                //Read ps content line by line
-                using (StreamReader sr = new StreamReader(@"scripts\" + itemName + ".ps1", Encoding.Default))
+                // Read ps content line by line
+                using (StreamReader sr = new StreamReader(psDir, Encoding.Default))
                 {
-                    // PS info
-                    MessageBox.Show(_psInfo + string.Join(Environment.NewLine, System.IO.File.ReadAllLines(psDir).Where(s => s.StartsWith("###")).Select(s => s.Substring(3).Replace("###", "\r\n"))));
-                }
+                    // Run ps?
+                    if (MessageBox.Show(_psRun + "\r\n" + _psInfo + string.Join(Environment.NewLine, System.IO.File.ReadAllLines(psDir).Where(s => s.StartsWith("###")).Select(s => s.Substring(3).Replace("###", "\r\n"))), "", MessageBoxButtons.YesNo) == DialogResult.Yes)
 
-                // Run ps?
-                if (MessageBox.Show(_psRun, "", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    var ps1File = @"scripts\" + itemName + ".ps1";
-                    var startInfo = new ProcessStartInfo()
                     {
-                        FileName = "powershell.exe",
-                        Arguments = $"-NoProfile -ExecutionPolicy unrestricted -file \"{ps1File}\"",
-                        UseShellExecute = true,
-                    };
-                    Process.Start(startInfo);
+                        var ps1File = @"scripts\" + itemName + ".ps1";
+                        var startInfo = new ProcessStartInfo()
+                        {
+                            FileName = "powershell.exe",
+                            Arguments = $"-NoProfile -ExecutionPolicy unrestricted -file \"{ps1File}\"",
+                            UseShellExecute = true,
+                        };
+                        Process.Start(startInfo);
+                    }
                 }
             }
         }

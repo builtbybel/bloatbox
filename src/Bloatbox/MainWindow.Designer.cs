@@ -58,15 +58,14 @@
             this.LinkGitHub = new System.Windows.Forms.ToolStripMenuItem();
             this.CheckUpdates = new System.Windows.Forms.ToolStripMenuItem();
             this.AppInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.PnlMiddleB = new System.Windows.Forms.Panel();
+            this.PnlBottom = new System.Windows.Forms.Panel();
             this.PSMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Marketplace = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.PnlLeft.SuspendLayout();
             this.PnlRight.SuspendLayout();
             this.PnlMiddle.SuspendLayout();
             this.MainMenu.SuspendLayout();
-            this.PnlMiddleB.SuspendLayout();
+            this.PnlBottom.SuspendLayout();
             this.PSMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -449,7 +448,7 @@
             // MainMenu
             // 
             this.MainMenu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.MainMenu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainMenu.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LinkGitHub,
@@ -457,14 +456,14 @@
             this.AppInfo});
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MainMenu.Size = new System.Drawing.Size(229, 94);
+            this.MainMenu.Size = new System.Drawing.Size(227, 94);
             // 
             // LinkGitHub
             // 
             this.LinkGitHub.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LinkGitHub.Image = ((System.Drawing.Image)(resources.GetObject("LinkGitHub.Image")));
             this.LinkGitHub.Name = "LinkGitHub";
-            this.LinkGitHub.Size = new System.Drawing.Size(228, 30);
+            this.LinkGitHub.Size = new System.Drawing.Size(226, 30);
             this.LinkGitHub.Text = "github/bloatbox";
             this.LinkGitHub.Click += new System.EventHandler(this.LinkGitHub_Click);
             // 
@@ -472,7 +471,7 @@
             // 
             this.CheckUpdates.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CheckUpdates.Name = "CheckUpdates";
-            this.CheckUpdates.Size = new System.Drawing.Size(228, 30);
+            this.CheckUpdates.Size = new System.Drawing.Size(226, 30);
             this.CheckUpdates.Text = "Check for updates";
             this.CheckUpdates.Click += new System.EventHandler(this.CheckUpdates_Click);
             // 
@@ -480,18 +479,18 @@
             // 
             this.AppInfo.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AppInfo.Name = "AppInfo";
-            this.AppInfo.Size = new System.Drawing.Size(228, 30);
+            this.AppInfo.Size = new System.Drawing.Size(226, 30);
             this.AppInfo.Text = "Info";
             this.AppInfo.Click += new System.EventHandler(this.AppInfo_Click);
             // 
-            // PnlMiddleB
+            // PnlBottom
             // 
-            this.PnlMiddleB.Controls.Add(this.BtnRunUninstaller);
-            this.PnlMiddleB.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlMiddleB.Location = new System.Drawing.Point(358, 672);
-            this.PnlMiddleB.Name = "PnlMiddleB";
-            this.PnlMiddleB.Size = new System.Drawing.Size(436, 73);
-            this.PnlMiddleB.TabIndex = 29;
+            this.PnlBottom.Controls.Add(this.BtnRunUninstaller);
+            this.PnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PnlBottom.Location = new System.Drawing.Point(358, 672);
+            this.PnlBottom.Name = "PnlBottom";
+            this.PnlBottom.Size = new System.Drawing.Size(436, 73);
+            this.PnlBottom.TabIndex = 29;
             // 
             // PSMenu
             // 
@@ -499,23 +498,18 @@
             this.PSMenu.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PSMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.PSMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Marketplace,
-            this.toolStripSeparator1});
+            this.Marketplace});
             this.PSMenu.Name = "MainMenu";
             this.PSMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.PSMenu.Size = new System.Drawing.Size(211, 60);
+            this.PSMenu.Size = new System.Drawing.Size(211, 32);
             this.PSMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.PSMenu_ItemClicked);
             // 
             // Marketplace
             // 
+            this.Marketplace.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Marketplace.Name = "Marketplace";
             this.Marketplace.Size = new System.Drawing.Size(210, 28);
             this.Marketplace.Text = "Visit Marketplace";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
             // 
             // MainWindow
             // 
@@ -523,7 +517,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1152, 745);
-            this.Controls.Add(this.PnlMiddleB);
+            this.Controls.Add(this.PnlBottom);
             this.Controls.Add(this.PnlMiddle);
             this.Controls.Add(this.PnlRight);
             this.Controls.Add(this.PnlLeft);
@@ -541,7 +535,7 @@
             this.PnlMiddle.ResumeLayout(false);
             this.PnlMiddle.PerformLayout();
             this.MainMenu.ResumeLayout(false);
-            this.PnlMiddleB.ResumeLayout(false);
+            this.PnlBottom.ResumeLayout(false);
             this.PSMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -576,11 +570,10 @@
         private System.Windows.Forms.ProgressBar PBar;
         private System.Windows.Forms.LinkLabel LnkStartFresh;
         private System.Windows.Forms.Button BtnRunUninstaller;
-        private System.Windows.Forms.Panel PnlMiddleB;
+        private System.Windows.Forms.Panel PnlBottom;
         private System.Windows.Forms.Button BtnMore;
         private System.Windows.Forms.ContextMenuStrip PSMenu;
         private System.Windows.Forms.ToolStripMenuItem Marketplace;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 
