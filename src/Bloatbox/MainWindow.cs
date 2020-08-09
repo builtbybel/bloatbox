@@ -15,6 +15,8 @@ namespace Bloatbox
 {
     public partial class MainWindow : Form
     {
+        private readonly string applicationName = Application.ProductName;
+
         private List<string> _listSystemApps = new List<string>();
         private List<string> _listFreshStart = new List<string>();
         private Config c = new Config();
@@ -64,6 +66,9 @@ namespace Bloatbox
 
         private readonly string _releaseUpToDate = "There are currently no updates available.";
         private readonly string _releaseUnofficial = "You are using an unoffical version of Bloatbox.";
+
+        // Other strings
+        private readonly string _docsMSAppsInfo = "https://docs.microsoft.com/windows/application-management/apps-in-windows-10";
 
         public Version CurrentVersion = new Version(Application.ProductVersion);
         public Version LatestVersion;
@@ -173,6 +178,9 @@ namespace Bloatbox
 
             foreach (var item in LstUWPRemove.Items)
             {
+                // Set current removal status in title bar
+                this.Text = applicationName + " (Removing " + item.ToString() + ")";
+
                 powerShell.Commands.Clear();
                 powerShell.AddCommand("Get-AppxPackage");
                 powerShell.AddArgument(item.ToString());
@@ -200,6 +208,9 @@ namespace Bloatbox
                 if (powerShell.HadErrors) foreach (var p in powerShell.Streams.Error) { Console.WriteLine("\n\nERROR:\n" + p.ToString() + "\n\n"); } */
             }
 
+            // Reset title bar to app name only
+            this.Text = applicationName;
+
             string outputPS;
             if (powerShell.HadErrors) { outputPS = success + "\n" + failed; powerShell.Streams.Error.Clear(); }
             else { outputPS = success; }
@@ -214,7 +225,20 @@ namespace Bloatbox
             LblInstalledCount.Text = _installCount + " (" + installed.ToString() + ")";
             LblRemoveCount.Text = _removeCount + " (" + remove.ToString() + ")";
 
-            if (LstUWPRemove.Items.Count == 0) LnkStartFresh.Visible = true; else LnkStartFresh.Visible = false;
+            if (LstUWPRemove.Items.Count == 0)
+            {
+                LblrightInfo.Visible = 
+                LnkStartFresh.Visible =
+                LnkAppsInfo.Visible =
+                true;
+            }
+            else
+            {
+                LblrightInfo.Visible =
+                LnkStartFresh.Visible =
+                LnkAppsInfo.Visible =
+                false;
+            }
 
             if (installed == 0)
                 BtnAddAll.Enabled =
@@ -256,7 +280,7 @@ namespace Bloatbox
             {   //Try to open the file
                 Database = System.IO.File.OpenText("bloatbox.txt");
             }
-            catch (System.IO.FileNotFoundException)                                     // bloatbox.txt does not exists!?
+            catch (System.IO.FileNotFoundException)                                       // bloatbox.txt does not exists!?
             {
                 System.IO.StreamWriter sw = System.IO.File.CreateText("bloatbox.txt");    // Create it!
                 sw.Write(Resources.Bloatbox);                                             // Populate it with built in preset
@@ -388,6 +412,11 @@ namespace Bloatbox
         private void LinkGitHub_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/builtbybel/bloatbox");
+        }
+
+        private void LnkAppsInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(_docsMSAppsInfo);
         }
 
         private void AppInfo_Click(object sender, EventArgs e)
