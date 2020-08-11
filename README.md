@@ -14,7 +14,7 @@
 <img alt="Latest GitHub release" src="https://img.shields.io/github/release/builtbybel/bloatbox.svg?style=flat-square" />
 </a>
 	
-<a href="https://github.com/builtbybel/burnbytes/releases" target="_blank">
+<a href="https://github.com/builtbybel/bloatbox/releases" target="_blank">
 <img alt="Downloads on GitHub" src="https://img.shields.io/github/downloads/builtbybel/bloatbox/total.svg?style=flat-square" />
 </a>
 
