@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <br>
   <a href="http://www.builtbybel.com"><img src="https://github.com/builtbybel/bloatbox/blob/master/src/Bloatbox/bloatbox.ico" alt="Bloatbox" width="200"></a>
