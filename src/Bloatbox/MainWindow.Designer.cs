@@ -45,7 +45,6 @@
             this.LblleftAppName = new System.Windows.Forms.Label();
             this.LblMainMenu = new System.Windows.Forms.Button();
             this.PnlRight = new System.Windows.Forms.Panel();
-            this.LnkAppsInfo = new System.Windows.Forms.LinkLabel();
             this.LnkStartFresh = new System.Windows.Forms.LinkLabel();
             this.LblrightInfo = new System.Windows.Forms.Label();
             this.LblrightAppName = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.AppInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.PnlBottom = new System.Windows.Forms.Panel();
             this.PSMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.OptionalFeatures = new System.Windows.Forms.ToolStripMenuItem();
             this.Marketplace = new System.Windows.Forms.ToolStripMenuItem();
             this.PnlLeft.SuspendLayout();
             this.PnlRight.SuspendLayout();
@@ -309,7 +309,6 @@
             // PnlRight
             // 
             this.PnlRight.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PnlRight.Controls.Add(this.LnkAppsInfo);
             this.PnlRight.Controls.Add(this.LnkStartFresh);
             this.PnlRight.Controls.Add(this.LblrightInfo);
             this.PnlRight.Controls.Add(this.LblrightAppName);
@@ -321,22 +320,6 @@
             this.PnlRight.Name = "PnlRight";
             this.PnlRight.Size = new System.Drawing.Size(358, 745);
             this.PnlRight.TabIndex = 27;
-            // 
-            // LnkAppsInfo
-            // 
-            this.LnkAppsInfo.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
-            this.LnkAppsInfo.AutoEllipsis = true;
-            this.LnkAppsInfo.BackColor = System.Drawing.Color.Transparent;
-            this.LnkAppsInfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LnkAppsInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.LnkAppsInfo.LinkColor = System.Drawing.Color.DeepPink;
-            this.LnkAppsInfo.Location = new System.Drawing.Point(14, 398);
-            this.LnkAppsInfo.Name = "LnkAppsInfo";
-            this.LnkAppsInfo.Size = new System.Drawing.Size(326, 17);
-            this.LnkAppsInfo.TabIndex = 29;
-            this.LnkAppsInfo.TabStop = true;
-            this.LnkAppsInfo.Text = "Understand the different apps included in Windows 10";
-            this.LnkAppsInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkAppsInfo_LinkClicked);
             // 
             // LnkStartFresh
             // 
@@ -522,17 +505,25 @@
             this.PSMenu.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PSMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.PSMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OptionalFeatures,
             this.Marketplace});
             this.PSMenu.Name = "MainMenu";
             this.PSMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.PSMenu.Size = new System.Drawing.Size(211, 32);
+            this.PSMenu.Size = new System.Drawing.Size(240, 60);
             this.PSMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.PSMenu_ItemClicked);
+            // 
+            // OptionalFeatures
+            // 
+            this.OptionalFeatures.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OptionalFeatures.ForeColor = System.Drawing.Color.Black;
+            this.OptionalFeatures.Name = "OptionalFeatures";
+            this.OptionalFeatures.Size = new System.Drawing.Size(239, 28);
+            this.OptionalFeatures.Text = "Add more features ...";
             // 
             // Marketplace
             // 
-            this.Marketplace.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Marketplace.Name = "Marketplace";
-            this.Marketplace.Size = new System.Drawing.Size(210, 28);
+            this.Marketplace.Size = new System.Drawing.Size(239, 28);
             this.Marketplace.Text = "Visit Marketplace";
             // 
             // MainWindow
@@ -597,8 +588,8 @@
         private System.Windows.Forms.Panel PnlBottom;
         private System.Windows.Forms.Button BtnMore;
         private System.Windows.Forms.ContextMenuStrip PSMenu;
+        private System.Windows.Forms.ToolStripMenuItem OptionalFeatures;
         private System.Windows.Forms.ToolStripMenuItem Marketplace;
-        private System.Windows.Forms.LinkLabel LnkAppsInfo;
     }
 }
 

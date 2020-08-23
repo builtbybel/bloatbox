@@ -39,14 +39,16 @@ namespace Bloatbox
 
         private readonly string _infoApp = "Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" +
                                             "\n\nRemove Bloatwares from Windows 10.\r\n\n" +
-                                            "This project was intended as an extension for github.com/spydish\r\n\n" +
-                                            "Credits and other notes on github.com/bloatbox\r\n" +
-                                            "(C) 2020, Builtbybel (former Mirinsoft)";
+                                            "This project was intended as an extension for github.com/builtbybel/privatezilla\r\n\n" +
+                                            "You can also reach out to me on\n" +
+                                            "\ttwitter.com/builtbybel\r\n\n" +
+                                            "(C) 2020, Builtbybel";
 
         // Community strings
         private readonly string _uriPkg = "https://github.com/Sycnex/Windows10Debloater/raw/master/Windows10Debloater.ps1";
 
-        private readonly string _uriMarketplace = "https://github.com/builtbybel/bloatbox/tree/master/marketplace";
+        private readonly string _uriOptionalFeatures = "https://github.com/builtbybel/bloatbox#community-package";
+        private readonly string _uriMarketplace= "https://github.com/builtbybel/bloatbox/tree/master/marketplace";
 
         private readonly string _infoPkg = "This will download the PowerShell based Community version \"Windows10Debloater.ps1\"" +
                                                   "\n\nThis is a interactive script with prompts which runs the following functions:" +
@@ -62,13 +64,10 @@ namespace Bloatbox
         private readonly string _psRun = "Do you really want to run this script?\r\n";
 
         // Update strings
-        private readonly string _releaseURL = "https://raw.githubusercontent.com/builtbybel/bloatbox/master/latest.txt";
+        private readonly string _releaseURL = "https://raw.githubusercontent.com/builtbybel/patchfluent/master/latest.txt";
 
         private readonly string _releaseUpToDate = "There are currently no updates available.";
         private readonly string _releaseUnofficial = "You are using an unoffical version of Bloatbox.";
-
-        // Other strings
-        private readonly string _docsMSAppsInfo = "https://docs.microsoft.com/windows/application-management/apps-in-windows-10";
 
         public Version CurrentVersion = new Version(Application.ProductVersion);
         public Version LatestVersion;
@@ -229,14 +228,14 @@ namespace Bloatbox
             {
                 LblrightInfo.Visible = 
                 LnkStartFresh.Visible =
-                LnkAppsInfo.Visible =
+       
                 true;
             }
             else
             {
                 LblrightInfo.Visible =
                 LnkStartFresh.Visible =
-                LnkAppsInfo.Visible =
+         
                 false;
             }
 
@@ -414,11 +413,6 @@ namespace Bloatbox
             Process.Start("https://github.com/builtbybel/bloatbox");
         }
 
-        private void LnkAppsInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(_docsMSAppsInfo);
-        }
-
         private void AppInfo_Click(object sender, EventArgs e)
         {
             MessageBox.Show(_infoApp, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -506,18 +500,17 @@ namespace Bloatbox
             this.PSMenu.Show(Cursor.Position.X, Cursor.Position.Y);
         }
 
-        // Check if ps directory @"scripts" available (optional feature)
+        // Check if ps directory @"scripts" available (optional community feature)
         private void GetPS()
         {
             string path = @"scripts";
-            if (Directory.Exists(path))
-                PopulatePS();
+            if (Directory.Exists(path)) { PopulatePS(); OptionalFeatures.Visible = false; Marketplace.Visible = true; }
             else
-                BtnMore.Visible = false;
+            { OptionalFeatures.Visible = true; Marketplace.Visible = false; }
         }
 
         /// <summary>
-        /// Populate ps files (optional feature)
+        /// Populate ps files (optional community feature)
         /// </summary>
         private void PopulatePS()
         {
@@ -530,7 +523,7 @@ namespace Bloatbox
         }
 
         /// <summary>
-        /// Run ps files (optional feature)
+        /// Run ps files (optional community feature)
         /// </summary>
         private void PSMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -539,7 +532,9 @@ namespace Bloatbox
 
             string psDir = @"scripts\" + itemName + ".ps1";
 
-            if (itemName.Contains("Marketplace"))
+            if (itemName.Contains("Add more features ..."))
+                Process.Start(_uriOptionalFeatures);
+            else if (itemName.Contains("Visit Marketplace"))
                 Process.Start(_uriMarketplace);
             else
             {
