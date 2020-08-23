@@ -64,7 +64,7 @@ namespace Bloatbox
         private readonly string _psRun = "Do you really want to run this script?\r\n";
 
         // Update strings
-        private readonly string _releaseURL = "https://raw.githubusercontent.com/builtbybel/patchfluent/master/latest.txt";
+        private readonly string _releaseURL = "https://raw.githubusercontent.com/builtbybel/bloatbox/master/latest.txt";
 
         private readonly string _releaseUpToDate = "There are currently no updates available.";
         private readonly string _releaseUnofficial = "You are using an unoffical version of Bloatbox.";
