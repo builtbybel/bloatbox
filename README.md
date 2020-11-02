@@ -47,7 +47,6 @@ This code is based on parts of this nice project from [ConditionalException](htt
 
 - (Latest release) [Download](https://github.com/builtbybel/bloatbox/releases)
 - (Mirror on my site) [Download](https://www.builtbybel.com/bloatbox)
-- (Source Code) [Download](https://github.com/builtbybel/bloatbox/releases) 
 
 ## Community package
 The community package for Bloatbox adds support for several advanced scripting features based upon PowerShell, e.g.
