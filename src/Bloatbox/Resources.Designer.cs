@@ -68,6 +68,7 @@ namespace Bloatbox {
         ///InputApp
         ///Microsoft.AAD.BrokerPlugin
         ///Microsoft.AccountsControl
+        ///Microsoft.Advertising.Xaml
         ///Microsoft.AsyncTextService
         ///Microsoft.BioEnrollment
         ///Microsoft.CredDialogHost
@@ -75,11 +76,11 @@ namespace Bloatbox {
         ///Microsoft.LockApp
         ///Microsoft.MicrosoftEdge
         ///Microsoft.MicrosoftEdgeDevToolsClient
+        ///Microsoft.NET
         ///Microsoft.PPIProjection
-        ///Microsoft.Win32WebViewHost
-        ///Microsoft.Advertising.Xaml
-        ///Microsoft.Windows.Apprep.ChxApp
-        ///Microsoft.Windows.As [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        ///Microsoft.Services.Store.Engagement
+        ///Microsoft.VCLibs
+        ///Microsoft.Wi [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
         internal static string Bloatbox {
             get {
@@ -89,17 +90,17 @@ namespace Bloatbox {
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die &lt;?xml version=&quot;1.0&quot;?&gt;
-        ///&lt;XmlConfig xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-        ///  &lt;removeTest&gt;
-        ///    &lt;string&gt;4DF9E0F8.Netflix&lt;/string&gt;
-        ///    &lt;string&gt;Fitbit.FitbitCoach&lt;/string&gt;
+        ///&lt;Config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+        ///  &lt;Bloatware&gt;
+        ///  	&lt;string&gt;4DF9E0F8.Netflix&lt;/string&gt;
+        ///	&lt;string&gt;E046963F.LenovoCompanion&lt;/string&gt;
         ///    &lt;string&gt;king.com.CandyCrushSaga&lt;/string&gt;
-        ///    &lt;string&gt;Microsoft.BingNews&lt;/string&gt;
-        ///    &lt;string&gt;Microsoft.BingWeather&lt;/string&gt;
-        ///    &lt;string&gt;Microsoft.MicrosoftOfficeHub&lt;/string&gt;
-        ///    &lt;string&gt;Microsoft.MicrosoftSolitaireCollection&lt;/string&gt;
-        ///    &lt;string&gt;Microsoft.SkypeApp&lt;/string&gt;
-        ///    &lt;string [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        ///	&lt;string&gt;king.com.CandyCrushFriends&lt;/string&gt;
+        ///	&lt;string&gt;king.com.FarmHeroesSaga&lt;/string&gt;
+        ///	&lt;string&gt;LenovoCorporation.LenovoID&lt;/string&gt;
+        ///&lt;string&gt;LenovoCorporation.LenovoSettings&lt;/string&gt;
+        ///    &lt;string&gt;Microsoft.549981C3F5F10&lt;/string&gt;
+        ///	  &lt;string&gt;Micro [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
         internal static string Freshstart {
             get {
