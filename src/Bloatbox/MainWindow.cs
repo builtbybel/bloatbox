@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bloatbox.Locales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -23,51 +24,14 @@ namespace Bloatbox
 
         private readonly PowerShell powerShell = PowerShell.Create();
 
-        // General strings
-        private readonly string _installCount = "My apps";
-
-        private readonly string _removeCount = "Remove apps";
-        private readonly string _nothingCount = "No apps to uninstall!";
-
-        private readonly string _warningSystemApps = "Be picky about which System applications to uninstall.\r\n\n" +
-                                                     "You can uninstall most of the built-in apps, even ones that don't normally offer an \"Uninstall\" option.\r\n\n" +
-                                                     "Note, however, Bloatbox won't allow you to remove a few of the most important built-in apps, like Microsoft Edge, .NET framework, UI.Xaml etc. as these apps are needed for the Windows 10 \"Experience\" and for other programs. " +
-                                                     "If you try, you’ll see an error message saying the removal failed.";
-
-        private readonly string _infoFreshStart = "This will add all the annoying bloatware apps, pre-installed on Windows 10 including some apps your PC manufacturer included to the removal list.\r\n\n" +
-                                                  "Most of these apps are garbage, but if you find important stuff on the list just remove it from the right box before hitting \"Uninstall\".";
-
-        private readonly string _infoApp = "Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" +
-                                            "\n\nRemove Bloatwares from Windows 10.\r\n\n" +
-                                            "This project was intended as an extension for github.com/builtbybel/privatezilla\r\n\n" +
-                                            "You can also reach out to me on\n" +
-                                            "\ttwitter.com/builtbybel\r\n\n" +
-                                            "(C) 2020, Builtbybel";
-
         // Community strings
         private readonly string _uriPkg = "https://github.com/Sycnex/Windows10Debloater/raw/master/Windows10Debloater.ps1";
 
         private readonly string _uriOptionalFeatures = "https://github.com/builtbybel/bloatbox#community-package";
-        private readonly string _uriMarketplace= "https://github.com/builtbybel/bloatbox/tree/master/marketplace";
-
-        private readonly string _infoPkg = "This will download the PowerShell based Community version \"Windows10Debloater.ps1\"" +
-                                                  "\n\nThis is a interactive script with prompts which runs the following functions:" +
-                                                  "\n- Debloat (a list of Bloatware that is removed can be viewed on the authors GitHub repository)" +
-                                                  "\n- Removes registry keys leftover that are associated with the bloatware apps" +
-                                                  "\n- Protect privacy by stopping some telemetry functions, stops Cortana from being used as your Search Index, disables unneccessary scheduled tasks, and more" +
-                                                  "\n- Stop-EdgePDF" +
-                                                   "\r\n\nDo you wish to continue?\r\n\nMore information about this script can be found here https://github.com/Sycnex/Windows10Debloater";
-
-        // PowerShell strings
-        private readonly string _psInfo = "Disclaimer:\r\n";
-
-        private readonly string _psRun = "Do you really want to run this script?\r\n";
+        private readonly string _uriMarketplace = "https://github.com/builtbybel/bloatbox/tree/master/marketplace";
 
         // Update strings
         private readonly string _releaseURL = "https://raw.githubusercontent.com/builtbybel/bloatbox/master/latest.txt";
-
-        private readonly string _releaseUpToDate = "There are currently no updates available.";
-        private readonly string _releaseUnofficial = "You are using an unoffical version of Bloatbox.";
 
         public Version CurrentVersion = new Version(Application.ProductVersion);
         public Version LatestVersion;
@@ -75,7 +39,7 @@ namespace Bloatbox
         /// <summary>
         /// Check for updates
         /// </summary>
-        private void CheckUpdates_Click(object sender, EventArgs e)
+        private void CheckRelease_Click(object sender, EventArgs e)
         {
             try
             {
@@ -101,24 +65,53 @@ namespace Bloatbox
 
             if (equals == 0)
             {
-                MessageBox.Show(_releaseUpToDate, this.Text, MessageBoxButtons.OK); // Up-to-date
+                MessageBox.Show(Locale.releaseUpToDate, this.Text, MessageBoxButtons.OK); // Up-to-date
             }
             else if (equals < 0)
             {
-                MessageBox.Show(_releaseUnofficial, this.Text, MessageBoxButtons.OK); // Unofficial
+                MessageBox.Show(Locale.releaseUnofficial, this.Text, MessageBoxButtons.OK); // Unofficial
             }
             else // New release available!
             {
-                if (MessageBox.Show("There is a new version available #" + LatestVersion + "\nYour are using version #" + CurrentVersion + "\n\nDo you want to open the @github/releases page?", this.Text, MessageBoxButtons.YesNo) == DialogResult.Yes) // New release available!
+                if (MessageBox.Show(Locale.releaseUpdateAvailable + " " + LatestVersion + Locale.releaseUpdateYourVersion.Replace("\\n", "\n") + " " + CurrentVersion + Locale.releaseUpdateAvailableURL.Replace("\\n", "\n"), this.Text, MessageBoxButtons.YesNo) == DialogResult.Yes) // New release available!
                 {
                     Process.Start("https://github.com/builtbybel/bloatbox/releases/tag/" + LatestVersion);
                 }
             }
         }
 
+        public void Globalization()
+        {
+            LinkGitHub.Text = Locale.menuRepository;
+            CheckRelease.Text = Locale.menuCheckRelease;
+            AppInfo.Text = Locale.menuInfoApp;
+            OptionalFeatures.Text = Locale.menuPS;
+            Marketplace.Text = Locale.menuMarketplace;
+            LblHeader.Text = Locale.LblHeader;
+            LnkHeader.Text = Locale.LnkHeader;
+            LblInstalledCount.Text = Locale.LblInstalledCount;
+            LblLeftAppName.Text = Locale.LblLeftAppName;
+            LblRemoveCount.Text = Locale.LblRemoveCount;
+            LblRightAppName.Text = Locale.LblRightAppName;
+            BtnAddAll.Text = Locale.BtnAddAll;
+            BtnAdd.Text = Locale.BtnAdd;
+            BtnRemoveAll.Text = Locale.BtnRemoveAll;
+            BtnRemove.Text = Locale.BtnRemove;
+            BtnRunUninstaller.Text = Locale.BtnRunUninstaller;
+            LblRightInfo.Text = Locale.LblRightInfo;
+            LnkStartFresh.Text = Locale.LnkStartFresh;
+            ChkShowUWPSystem.Text = Locale.ChkShowUWPSystem;
+        }
+
         public MainWindow()
         {
+            // Uncomment lower line and add lang code to run localization test
+            // Thread.CurrentThread.CurrentUICulture = new CultureInfo("de");
+
             InitializeComponent();
+
+            // GUI localization
+            Globalization();
 
             GetUWPSystem();   // System apps ONLY
             GetUWP();        // All apps
@@ -172,13 +165,13 @@ namespace Bloatbox
         /// </summary>
         private string RemoveUWP()
         {
-            string success = "Successfully removed:\n";
-            string failed = "Failed to remove:\n";
+            string success = Locale.statusSuccessRemove + "\n";
+            string failed = Locale.statusFailedRemove + "\n";
 
             foreach (var item in LstUWPRemove.Items)
             {
                 // Set current removal status in title bar
-                this.Text = applicationName + " (Removing " + item.ToString() + ")";
+                this.Text = applicationName + " (" + Locale.statusDoUninstall + " " + item.ToString() + ")";
 
                 powerShell.Commands.Clear();
                 powerShell.AddCommand("Get-AppxPackage");
@@ -221,21 +214,21 @@ namespace Bloatbox
         {
             int installed = LstUWP.Items.Count;
             int remove = LstUWPRemove.Items.Count;
-            LblInstalledCount.Text = _installCount + " (" + installed.ToString() + ")";
-            LblRemoveCount.Text = _removeCount + " (" + remove.ToString() + ")";
+            LblInstalledCount.Text = Locale.LblInstalledCount + " (" + installed.ToString() + ")";
+            LblRemoveCount.Text = Locale.LblRemoveCount + " (" + remove.ToString() + ")";
 
             if (LstUWPRemove.Items.Count == 0)
             {
-                LblrightInfo.Visible = 
+                LblRightInfo.Visible =
                 LnkStartFresh.Visible =
-       
+
                 true;
             }
             else
             {
-                LblrightInfo.Visible =
+                LblRightInfo.Visible =
                 LnkStartFresh.Visible =
-         
+
                 false;
             }
 
@@ -264,7 +257,7 @@ namespace Bloatbox
 
         private void ChkShowUWPSystem_CheckedChanged(object sender, EventArgs e)
         {
-            if (ChkShowUWPSystem.Checked) MessageBox.Show(_warningSystemApps, "Disclaimer", MessageBoxButtons.OK);
+            if (ChkShowUWPSystem.Checked) MessageBox.Show(Locale.msgShowUWPSystem.Replace("\\n", "\n"), Locale.msgWarning, MessageBoxButtons.OK);
             BtnRefresh_Click(sender, e);
         }
 
@@ -362,7 +355,7 @@ namespace Bloatbox
         /// </summary>
         private void BtnRunUninstaller_Click(object sender, EventArgs e)
         {
-            if (LstUWPRemove.Items.Count == 0) { MessageBox.Show(_nothingCount); }
+            if (LstUWPRemove.Items.Count == 0) { MessageBox.Show(Locale.infoUninstallNull); }
             else
             {
                 Enabled = false;
@@ -380,7 +373,7 @@ namespace Bloatbox
         /// </summary>
         private void LnkStartFresh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (MessageBox.Show(_infoFreshStart, this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(Locale.msgStartFresh.Replace("\\n", "\n"), this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 string tempPath = Path.GetTempPath() + @"\Bloatbox-Freshstart" + Guid.NewGuid() + ".xml";       // Create a temp FilePath
                 StreamWriter sW = new StreamWriter(tempPath, false, Encoding.Unicode);                          // Open a file at the path
@@ -415,15 +408,16 @@ namespace Bloatbox
 
         private void AppInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(_infoApp, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Bloatbox" + "\nVersion " + Program.GetCurrentVersionTostring() + " (Perseus)" +
+               Locale.infoApp.Replace("\\t", "\t"), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
         /// Download optional community version Windows10Debloater.ps1
         /// </summary>
-        private void LnkGetCommunityVer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LnkHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (MessageBox.Show(_infoPkg, this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(Locale.infoPS.Replace("\\n", "\n"), this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 PBar.Visible = true;
                 var pkg = _uriPkg;
@@ -532,9 +526,9 @@ namespace Bloatbox
 
             string psDir = @"scripts\" + itemName + ".ps1";
 
-            if (itemName.Contains("Add more features ..."))
+            if (itemName.Contains(Locale.menuPS))
                 Process.Start(_uriOptionalFeatures);
-            else if (itemName.Contains("Visit Marketplace"))
+            else if (itemName.Contains(Locale.menuMarketplace))
                 Process.Start(_uriMarketplace);
             else
             {
@@ -542,7 +536,7 @@ namespace Bloatbox
                 using (StreamReader sr = new StreamReader(psDir, Encoding.Default))
                 {
                     // Run ps?
-                    if (MessageBox.Show(_psRun + "\r\n" + _psInfo + string.Join(Environment.NewLine, System.IO.File.ReadAllLines(psDir).Where(s => s.StartsWith("###")).Select(s => s.Substring(3).Replace("###", "\r\n"))), "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show(Locale.msgDoPS + "\n\n" + Locale.msgWarning + string.Join(Environment.NewLine, System.IO.File.ReadAllLines(psDir).Where(s => s.StartsWith("###")).Select(s => s.Substring(3).Replace("###", "\r\n"))), "", MessageBoxButtons.YesNo) == DialogResult.Yes)
 
                     {
                         var ps1File = @"scripts\" + itemName + ".ps1";

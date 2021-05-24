@@ -117,10 +117,807 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ChkShowUWPSystem.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ChkShowUWPSystem.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ChkShowUWPSystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ChkShowUWPSystem.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ChkShowUWPSystem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 12pt</value>
+  </data>
+  <data name="ChkShowUWPSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 708</value>
+  </data>
+  <data name="ChkShowUWPSystem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="ChkShowUWPSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 31</value>
+  </data>
+  <data name="ChkShowUWPSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="ChkShowUWPSystem.Text" xml:space="preserve">
+    <value>Show system apps</value>
+  </data>
+  <data name="&gt;&gt;ChkShowUWPSystem.Name" xml:space="preserve">
+    <value>ChkShowUWPSystem</value>
+  </data>
+  <data name="&gt;&gt;ChkShowUWPSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChkShowUWPSystem.Parent" xml:space="preserve">
+    <value>PnlLeft</value>
+  </data>
+  <data name="&gt;&gt;ChkShowUWPSystem.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LblInstalledCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblInstalledCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 15pt, style=Bold</value>
+  </data>
+  <data name="LblInstalledCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
+  </data>
+  <data name="LblInstalledCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 28</value>
+  </data>
+  <data name="LblInstalledCount.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="LblInstalledCount.Text" xml:space="preserve">
+    <value>Apps [0] </value>
+  </data>
+  <data name="&gt;&gt;LblInstalledCount.Name" xml:space="preserve">
+    <value>LblInstalledCount</value>
+  </data>
+  <data name="&gt;&gt;LblInstalledCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblInstalledCount.Parent" xml:space="preserve">
+    <value>PnlLeft</value>
+  </data>
+  <data name="&gt;&gt;LblInstalledCount.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LblRemoveCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="LblRemoveCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblRemoveCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 15pt, style=Bold</value>
+  </data>
+  <data name="LblRemoveCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
+  </data>
+  <data name="LblRemoveCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 28</value>
+  </data>
+  <data name="LblRemoveCount.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="LblRemoveCount.Text" xml:space="preserve">
+    <value>Remove [0] </value>
+  </data>
+  <data name="&gt;&gt;LblRemoveCount.Name" xml:space="preserve">
+    <value>LblRemoveCount</value>
+  </data>
+  <data name="&gt;&gt;LblRemoveCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRemoveCount.Parent" xml:space="preserve">
+    <value>PnlRight</value>
+  </data>
+  <data name="&gt;&gt;LblRemoveCount.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="BtnRemoveAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="BtnRemoveAll.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnRemoveAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnRemoveAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 11.25pt</value>
+  </data>
+  <data name="BtnRemoveAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 236</value>
+  </data>
+  <data name="BtnRemoveAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="BtnRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>401, 32</value>
+  </data>
+  <data name="BtnRemoveAll.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="BtnRemoveAll.Text" xml:space="preserve">
+    <value>&lt;&lt; Remove all</value>
+  </data>
+  <data name="&gt;&gt;BtnRemoveAll.Name" xml:space="preserve">
+    <value>BtnRemoveAll</value>
+  </data>
+  <data name="&gt;&gt;BtnRemoveAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnRemoveAll.Parent" xml:space="preserve">
+    <value>PnlMiddle</value>
+  </data>
+  <data name="&gt;&gt;BtnRemoveAll.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="BtnAddAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="BtnAddAll.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnAddAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnAddAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 11.25pt</value>
+  </data>
+  <data name="BtnAddAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 138</value>
+  </data>
+  <data name="BtnAddAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="BtnAddAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>401, 32</value>
+  </data>
+  <data name="BtnAddAll.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="BtnAddAll.Text" xml:space="preserve">
+    <value>Add all &gt;&gt;</value>
+  </data>
+  <data name="&gt;&gt;BtnAddAll.Name" xml:space="preserve">
+    <value>BtnAddAll</value>
+  </data>
+  <data name="&gt;&gt;BtnAddAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnAddAll.Parent" xml:space="preserve">
+    <value>PnlMiddle</value>
+  </data>
+  <data name="&gt;&gt;BtnAddAll.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="BtnRefresh.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="BtnRefresh.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnRefresh.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe MDL2 Assets, 12pt</value>
+  </data>
+  <data name="BtnRefresh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>317, 46</value>
+  </data>
+  <data name="BtnRefresh.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="BtnRefresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 43</value>
+  </data>
+  <data name="BtnRefresh.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;BtnRefresh.Name" xml:space="preserve">
+    <value>BtnRefresh</value>
+  </data>
+  <data name="&gt;&gt;BtnRefresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnRefresh.Parent" xml:space="preserve">
+    <value>PnlLeft</value>
+  </data>
+  <data name="&gt;&gt;BtnRefresh.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="BtnClear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="BtnClear.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnClear.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnClear.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe MDL2 Assets, 12pt</value>
+  </data>
+  <data name="BtnClear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 46</value>
+  </data>
+  <data name="BtnClear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="BtnClear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 43</value>
+  </data>
+  <data name="BtnClear.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;BtnClear.Name" xml:space="preserve">
+    <value>BtnClear</value>
+  </data>
+  <data name="&gt;&gt;BtnClear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnClear.Parent" xml:space="preserve">
+    <value>PnlRight</value>
+  </data>
+  <data name="&gt;&gt;BtnClear.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="BtnRemove.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="BtnRemove.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnRemove.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnRemove.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 11.25pt</value>
+  </data>
+  <data name="BtnRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 276</value>
+  </data>
+  <data name="BtnRemove.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="BtnRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>401, 32</value>
+  </data>
+  <data name="BtnRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="BtnRemove.Text" xml:space="preserve">
+    <value>&lt; Remove selected</value>
+  </data>
+  <data name="&gt;&gt;BtnRemove.Name" xml:space="preserve">
+    <value>BtnRemove</value>
+  </data>
+  <data name="&gt;&gt;BtnRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnRemove.Parent" xml:space="preserve">
+    <value>PnlMiddle</value>
+  </data>
+  <data name="&gt;&gt;BtnRemove.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="BtnAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="BtnAdd.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnAdd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 11.25pt</value>
+  </data>
+  <data name="BtnAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 178</value>
+  </data>
+  <data name="BtnAdd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="BtnAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>401, 32</value>
+  </data>
+  <data name="BtnAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="BtnAdd.Text" xml:space="preserve">
+    <value>Add selected &gt;</value>
+  </data>
+  <data name="&gt;&gt;BtnAdd.Name" xml:space="preserve">
+    <value>BtnAdd</value>
+  </data>
+  <data name="&gt;&gt;BtnAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnAdd.Parent" xml:space="preserve">
+    <value>PnlMiddle</value>
+  </data>
+  <data name="&gt;&gt;BtnAdd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LstUWPRemove.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="LstUWPRemove.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 12pt</value>
+  </data>
+  <data name="LstUWPRemove.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="LstUWPRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 118</value>
+  </data>
+  <data name="LstUWPRemove.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="LstUWPRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 609</value>
+  </data>
+  <data name="LstUWPRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;LstUWPRemove.Name" xml:space="preserve">
+    <value>LstUWPRemove</value>
+  </data>
+  <data name="&gt;&gt;LstUWPRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LstUWPRemove.Parent" xml:space="preserve">
+    <value>PnlRight</value>
+  </data>
+  <data name="&gt;&gt;LstUWPRemove.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LstUWP.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="LstUWP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 12pt</value>
+  </data>
+  <data name="LstUWP.HorizontalScrollbar" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LstUWP.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="LstUWP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 118</value>
+  </data>
+  <data name="LstUWP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="LstUWP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 588</value>
+  </data>
+  <data name="LstUWP.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;LstUWP.Name" xml:space="preserve">
+    <value>LstUWP</value>
+  </data>
+  <data name="&gt;&gt;LstUWP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LstUWP.Parent" xml:space="preserve">
+    <value>PnlLeft</value>
+  </data>
+  <data name="&gt;&gt;LstUWP.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LblLeftAppName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="LblLeftAppName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblLeftAppName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 8.25pt</value>
+  </data>
+  <data name="LblLeftAppName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 101</value>
+  </data>
+  <data name="LblLeftAppName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="LblLeftAppName.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="LblLeftAppName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;LblLeftAppName.Name" xml:space="preserve">
+    <value>LblLeftAppName</value>
+  </data>
+  <data name="&gt;&gt;LblLeftAppName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblLeftAppName.Parent" xml:space="preserve">
+    <value>PnlLeft</value>
+  </data>
+  <data name="&gt;&gt;LblLeftAppName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LblMainMenu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblMainMenu.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="LblMainMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe MDL2 Assets, 12pt, style=Bold</value>
+  </data>
+  <data name="LblMainMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="LblMainMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 51</value>
+  </data>
+  <data name="LblMainMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;LblMainMenu.Name" xml:space="preserve">
+    <value>LblMainMenu</value>
+  </data>
+  <data name="&gt;&gt;LblMainMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblMainMenu.Parent" xml:space="preserve">
+    <value>PnlLeft</value>
+  </data>
+  <data name="&gt;&gt;LblMainMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PnlLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="PnlLeft.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PnlLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 745</value>
+  </data>
+  <data name="PnlLeft.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;PnlLeft.Name" xml:space="preserve">
+    <value>PnlLeft</value>
+  </data>
+  <data name="&gt;&gt;PnlLeft.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PnlLeft.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PnlLeft.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LnkStartFresh.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="LnkStartFresh.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="LnkStartFresh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 356</value>
+  </data>
+  <data name="LnkStartFresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 17</value>
+  </data>
+  <data name="LnkStartFresh.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="LnkStartFresh.Text" xml:space="preserve">
+    <value>Start fresh if your Windows 10 is loaded with bloatware</value>
+  </data>
+  <data name="&gt;&gt;LnkStartFresh.Name" xml:space="preserve">
+    <value>LnkStartFresh</value>
+  </data>
+  <data name="&gt;&gt;LnkStartFresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LnkStartFresh.Parent" xml:space="preserve">
+    <value>PnlRight</value>
+  </data>
+  <data name="&gt;&gt;LnkStartFresh.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LblRightInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="LblRightInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblRightInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 12pt</value>
+  </data>
+  <data name="LblRightInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 314</value>
+  </data>
+  <data name="LblRightInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 21</value>
+  </data>
+  <data name="LblRightInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="LblRightInfo.Text" xml:space="preserve">
+    <value>Move the apps you want to uninstall here.</value>
+  </data>
+  <data name="&gt;&gt;LblRightInfo.Name" xml:space="preserve">
+    <value>LblRightInfo</value>
+  </data>
+  <data name="&gt;&gt;LblRightInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRightInfo.Parent" xml:space="preserve">
+    <value>PnlRight</value>
+  </data>
+  <data name="&gt;&gt;LblRightInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LblRightAppName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="LblRightAppName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblRightAppName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 8.25pt</value>
+  </data>
+  <data name="LblRightAppName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 101</value>
+  </data>
+  <data name="LblRightAppName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="LblRightAppName.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="LblRightAppName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;LblRightAppName.Name" xml:space="preserve">
+    <value>LblRightAppName</value>
+  </data>
+  <data name="&gt;&gt;LblRightAppName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRightAppName.Parent" xml:space="preserve">
+    <value>PnlRight</value>
+  </data>
+  <data name="&gt;&gt;LblRightAppName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PnlRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="PnlRight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>794, 0</value>
+  </data>
+  <data name="PnlRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 745</value>
+  </data>
+  <data name="PnlRight.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;PnlRight.Name" xml:space="preserve">
+    <value>PnlRight</value>
+  </data>
+  <data name="&gt;&gt;PnlRight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PnlRight.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PnlRight.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="PBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 87</value>
+  </data>
+  <data name="PBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>401, 5</value>
+  </data>
+  <data name="PBar.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="PBar.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PBar.Name" xml:space="preserve">
+    <value>PBar</value>
+  </data>
+  <data name="&gt;&gt;PBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PBar.Parent" xml:space="preserve">
+    <value>PnlMiddle</value>
+  </data>
+  <data name="&gt;&gt;PBar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LblHeader.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="LblHeader.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblHeader.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 18pt</value>
+  </data>
+  <data name="LblHeader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 21</value>
+  </data>
+  <data name="LblHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 32</value>
+  </data>
+  <data name="LblHeader.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="LblHeader.Text" xml:space="preserve">
+    <value>Apps &amp;&amp; features</value>
+  </data>
+  <data name="&gt;&gt;LblHeader.Name" xml:space="preserve">
+    <value>LblHeader</value>
+  </data>
+  <data name="&gt;&gt;LblHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblHeader.Parent" xml:space="preserve">
+    <value>PnlMiddle</value>
+  </data>
+  <data name="&gt;&gt;LblHeader.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LnkHeader.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="LnkHeader.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="LnkHeader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 67</value>
+  </data>
+  <data name="LnkHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 17</value>
+  </data>
+  <data name="LnkHeader.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="LnkHeader.Text" xml:space="preserve">
+    <value>Optional features (download the Community version)</value>
+  </data>
+  <data name="&gt;&gt;LnkHeader.Name" xml:space="preserve">
+    <value>LnkHeader</value>
+  </data>
+  <data name="&gt;&gt;LnkHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LnkHeader.Parent" xml:space="preserve">
+    <value>PnlMiddle</value>
+  </data>
+  <data name="&gt;&gt;LnkHeader.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BtnMore.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="BtnMore.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="BtnMore.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnMore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe MDL2 Assets, 14.25pt</value>
+  </data>
+  <data name="BtnMore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>395, 46</value>
+  </data>
+  <data name="BtnMore.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="BtnMore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 43</value>
+  </data>
+  <data name="BtnMore.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;BtnMore.Name" xml:space="preserve">
+    <value>BtnMore</value>
+  </data>
+  <data name="&gt;&gt;BtnMore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnMore.Parent" xml:space="preserve">
+    <value>PnlMiddle</value>
+  </data>
+  <data name="&gt;&gt;BtnMore.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="PnlMiddle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="PnlMiddle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>358, 0</value>
+  </data>
+  <data name="PnlMiddle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>436, 682</value>
+  </data>
+  <data name="PnlMiddle.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;PnlMiddle.Name" xml:space="preserve">
+    <value>PnlMiddle</value>
+  </data>
+  <data name="&gt;&gt;PnlMiddle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PnlMiddle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PnlMiddle.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="BtnRunUninstaller.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="BtnRunUninstaller.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnRunUninstaller.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 11.25pt</value>
+  </data>
+  <data name="BtnRunUninstaller.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 27</value>
+  </data>
+  <data name="BtnRunUninstaller.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 32</value>
+  </data>
+  <data name="BtnRunUninstaller.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="BtnRunUninstaller.Text" xml:space="preserve">
+    <value>Uninstall</value>
+  </data>
+  <data name="&gt;&gt;BtnRunUninstaller.Name" xml:space="preserve">
+    <value>BtnRunUninstaller</value>
+  </data>
+  <data name="&gt;&gt;BtnRunUninstaller.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnRunUninstaller.Parent" xml:space="preserve">
+    <value>PnlBottom</value>
+  </data>
+  <data name="&gt;&gt;BtnRunUninstaller.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>14, 16</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="MainMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12.75pt</value>
+  </data>
+  <data name="LinkGitHub.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12.75pt</value>
+  </data>
   <data name="LinkGitHub.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAARxJREFUSEvt
@@ -131,7 +928,151 @@
         ySow8zjC+c/Rb85wjP8PtuyCUZNUMPaHXR1DC8b+hzNJKUXxDepCicH+b220AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="LinkGitHub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 30</value>
+  </data>
+  <data name="LinkGitHub.Text" xml:space="preserve">
+    <value>github/bloatbox</value>
+  </data>
+  <data name="CheckRelease.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12.75pt</value>
+  </data>
+  <data name="CheckRelease.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 30</value>
+  </data>
+  <data name="CheckRelease.Text" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
+  <data name="AppInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12.75pt</value>
+  </data>
+  <data name="AppInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 30</value>
+  </data>
+  <data name="AppInfo.Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 116</value>
+  </data>
+  <data name="&gt;&gt;MainMenu.Name" xml:space="preserve">
+    <value>MainMenu</value>
+  </data>
+  <data name="&gt;&gt;MainMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PnlBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PnlBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>358, 672</value>
+  </data>
+  <data name="PnlBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>436, 73</value>
+  </data>
+  <data name="PnlBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;PnlBottom.Name" xml:space="preserve">
+    <value>PnlBottom</value>
+  </data>
+  <data name="&gt;&gt;PnlBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PnlBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PnlBottom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="PSMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>173, 18</value>
   </metadata>
+  <data name="PSMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12.75pt</value>
+  </data>
+  <data name="OptionalFeatures.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12.75pt</value>
+  </data>
+  <data name="OptionalFeatures.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 28</value>
+  </data>
+  <data name="OptionalFeatures.Text" xml:space="preserve">
+    <value>Add more features ...</value>
+  </data>
+  <data name="Marketplace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 28</value>
+  </data>
+  <data name="Marketplace.Text" xml:space="preserve">
+    <value>Visit Marketplace</value>
+  </data>
+  <data name="PSMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 60</value>
+  </data>
+  <data name="&gt;&gt;PSMenu.Name" xml:space="preserve">
+    <value>PSMenu</value>
+  </data>
+  <data name="&gt;&gt;PSMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1152, 745</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>958, 506</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bloatbox</value>
+  </data>
+  <data name="&gt;&gt;LinkGitHub.Name" xml:space="preserve">
+    <value>LinkGitHub</value>
+  </data>
+  <data name="&gt;&gt;LinkGitHub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckRelease.Name" xml:space="preserve">
+    <value>CheckRelease</value>
+  </data>
+  <data name="&gt;&gt;CheckRelease.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AppInfo.Name" xml:space="preserve">
+    <value>AppInfo</value>
+  </data>
+  <data name="&gt;&gt;AppInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OptionalFeatures.Name" xml:space="preserve">
+    <value>OptionalFeatures</value>
+  </data>
+  <data name="&gt;&gt;OptionalFeatures.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Marketplace.Name" xml:space="preserve">
+    <value>Marketplace</value>
+  </data>
+  <data name="&gt;&gt;Marketplace.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainWindow</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
