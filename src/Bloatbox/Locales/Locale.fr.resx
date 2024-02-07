@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string" />
+                            <xsd:attribute name="type" type="xsd:string" />
+                            <xsd:attribute name="mimetype" type="xsd:string" />
+                            <xsd:attribute ref="xml:space" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string" />
+                            <xsd:attribute name="name" type="xsd:string" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                            <xsd:attribute ref="xml:space" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="BtnAdd" xml:space="preserve">
+        <value>Ajouter sélectionné &gt;</value>
+    </data>
+    <data name="BtnAddAll" xml:space="preserve">
+        <value>Ajouter tout &gt;&gt;</value>
+    </data>
+    <data name="BtnRemove" xml:space="preserve">
+        <value>&lt; Retirer sélectionné</value>
+    </data>
+    <data name="BtnRemoveAll" xml:space="preserve">
+        <value>&lt;&lt; Retirer tout</value>
+    </data>
+    <data name="BtnRunUninstaller" xml:space="preserve">
+        <value>Désinstaller</value>
+    </data>
+    <data name="ChkShowUWPSystem" xml:space="preserve">
+        <value>Afficher les applications système</value>
+    </data>
+    <data name="infoApp" xml:space="preserve">
+        <value>
+
+    Supprimer les logiciels superflus de Windows 10.
+
+    Ce projet était destiné comme une extension pour github.com/builtbybel/privatezilla
+
+    Toutes les informations et crédits concernant ce projet sur
+    \tgithub.com/builtbybel/bloatbox
+
+    Vous pouvez également me contacter sur
+    \ttwitter.com/builtbybel
+
+    (C) 2021, Builtbybel</value>
+    </data>
+    <data name="infoPS" xml:space="preserve">
+        <value>Cela téléchargera la version Communautaire basée sur PowerShell "Windows10Debloater.ps1\n\nIl s'agit d'un script interactif avec des invites qui exécute les fonctions suivantes :\n- Débarrasser (une liste de logiciels superflus qui sont supprimés peut être consultée sur le dépôt GitHub de l'auteur)\n- Supprime les clés de registre restantes associées aux applications superflues\n- Protège la vie privée en arrêtant certaines fonctions de télémétrie, arrête Cortana d'être utilisé comme votre index de recherche, désactive les tâches planifiées inutiles, et plus\n- Stop-EdgePDF\n\nSouhaitez-vous continuer ?\n\nPlus d'informations sur ce script peuvent être trouvées ici https://github.com/Sycnex/Windows10Debloater</value>
+    </data>
+    <data name="infoUninstallNull" xml:space="preserve">
+        <value>Aucune application à désinstaller !</value>
+    </data>
+    <data name="LblHeader" xml:space="preserve">
+        <value>Applications &amp;&amp; Fonctionnalités</value>
+    </data>
+    <data name="LblInstalledCount" xml:space="preserve">
+        <value>Applications</value>
+    </data>
+    <data name="LblLeftAppName" xml:space="preserve">
+        <value>Nom</value>
+    </data>
+    <data name="LblRemoveCount" xml:space="preserve">
+        <value>Supprimer</value>
+    </data>
+    <data name="LblRightAppName" xml:space="preserve">
+        <value>Nom</value>
+    </data>
+    <data name="LblRightInfo" xml:space="preserve">
+        <value>Déplacez les applications que vous souhaitez désinstaller ici.</value>
+    </data>
+    <data name="LnkHeader" xml:space="preserve">
+        <value>Fonctionnalités facultatives (téléchargez la version Communautaire)</value>
+    </data>
+    <data name="LnkStartFresh" xml:space="preserve">
+        <value>Commencez frais si votre Windows 10 est chargé de logiciels superflus</value>
+    </data>
+    <data name="menuCheckRelease" xml:space="preserve">
+        <value>Vérifier les mises à jour</value>
+    </data>
+    <data name="menuInfoApp" xml:space="preserve">
+        <value>Infos</value>
+    </data>
+    <data name="menuMarketplace" xml:space="preserve">
+        <value>Visiter la place de marché</value>
+    </data>
+    <data name="menuPS" xml:space="preserve">
+        <value>Ajouter plus de fonctionnalités...</value>
+    </data>
+    <data name="menuRepository" xml:space="preserve">
+        <value>github/bloatbox</value>
+    </data>
+    <data name="msgDoPS" xml:space="preserve">
+        <value>Voulez-vous vraiment exécuter ce script ?</value>
+    </data>
+    <data name="msgShowUWPSystem" xml:space="preserve">
+        <value>Soyez sélectif sur les applications système à désinstaller.\n\nVous pouvez désinstaller la plupart des applications intégrées, même celles qui n'offrent normalement pas l'option "Désinstaller".\n\nNotez cependant que Bloatbox ne vous permettra pas de supprimer quelques-unes des applications intégrées les plus importantes, comme Microsoft Edge, .NET framework, UI.Xaml etc., car ces applications sont nécessaires pour l'"Expérience" de Windows 10 et pour d'autres programmes. Si vous essayez, vous verrez un message d'erreur indiquant que la suppression a échoué.</value>
+    </data>
+    <data name="msgStartFresh" xml:space="preserve">
+        <value>Cela ajoutera toutes les applications superflues ennuyeuses, pré-installées sur Windows 10, y compris certaines applications inclues par votre fabricant de PC, à la liste de suppression.\r\n\nLa plupart de ces applications sont des déchets, mais si vous trouvez des éléments importants dans la liste, supprimez-les simplement de la boîte de droite avant de cliquer sur "Désinstaller".</value>
+    </data>
+    <data name="msgWarning" xml:space="preserve">
+        <value>Avertissement</value>
+    </data>
+    <data name="releaseUnofficial" xml:space="preserve">
+        <value>Vous utilisez une version non officielle de Bloatbox</value>
+    </data>
+    <data name="releaseUpdateAvailable" xml:space="preserve">
+        <value>Une nouvelle version est disponible</value>
+    </data>
+    <data name="releaseUpdateAvailableURL" xml:space="preserve">
+        <value>\n\nVoulez-vous ouvrir la page @github/releases ?</value>
+    </data>
+    <data name="releaseUpdateYourVersion" xml:space="preserve">
+        <value>\n\nVotre version est</value>
+    </data>
+    <data name="releaseUpToDate" xml:space="preserve">
+        <value>Il n'y a actuellement aucune mise à jour disponible.</value>
+    </data>
+    <data name="statusDoUninstall" xml:space="preserve">
+        <value>En cours de suppression</value>
+    </data>
+    <data name="statusFailedRemove" xml:space="preserve">
+        <value>Impossible de supprimer :</value>
+    </data>
+    <data name="statusSuccessRemove" xml:space="preserve">
+        <value>Supprimé avec succès :</value>
+    </data>
+</root>
